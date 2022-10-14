@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :lists
   has_many :comments
+  has_many :gifts, through: :lists
 end
