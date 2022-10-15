@@ -13,3 +13,9 @@
   gift_path(@gift),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+
+<% @gift.comments.each do |comment| %>
+  <li><%= comment.content %></li>
+<% end %>
+
+<%= render "shared/new_comment", gift: @gift, comment: @comment %>
