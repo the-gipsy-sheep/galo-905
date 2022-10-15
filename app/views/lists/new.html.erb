@@ -1,0 +1,13 @@
+<div class="text-uppercase justify-content-center bg-dark d-flex align-items-center" style="height: 200px; color: white; font-size: 1.8em;">
+  <h1 style="">Crear una Nueva Lista</h1>
+</div>
+<div class="container">
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :title,
+    label: "Titulo" %>
+    <%= f.input :description,
+    label: "Descripcion" %>
+    <%= f.input :privacy %>
+    <%= f.button :submit, "Crear Lista", class: "btn btn-primary"  %>
+  <% end %>
+</div>
