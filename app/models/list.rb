@@ -1,8 +1,8 @@
 class List < ApplicationRecord
   belongs_to :user
-  belongs_to :gift
+  has_many :gifts, dependent: :destroy
 
-  validates :title, presence: true
+  validates :title, :privacy, presence: true
   validates :title, uniqueness: true
   validates :title, length: { maximum: 30 }
   validates :description, length: { maximum: 280 }

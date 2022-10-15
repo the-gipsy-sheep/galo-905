@@ -59,20 +59,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_000422) do
     t.float "price", default: 0.0
     t.float "ranking", default: 0.0
     t.string "description"
-    t.string "status"
+    t.string "status", default: "disponible"
+    t.bigint "list_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_gifts_on_list_id"
   end
 
   create_table "lists", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.string "privacy"
+    t.string "privacy", default: "pública"
     t.bigint "user_id", null: false
-    t.bigint "gift_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["gift_id"], name: "index_lists_on_gift_id"
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
@@ -97,6 +97,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_14_000422) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "gifts"
   add_foreign_key "comments", "users"
-  add_foreign_key "lists", "gifts"
+  add_foreign_key "gifts", "lists"
   add_foreign_key "lists", "users"
 end

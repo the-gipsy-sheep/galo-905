@@ -1,7 +1,8 @@
 class Gift < ApplicationRecord
   has_one_attached :photo
-  has_many :lists
+  belongs_to :list
   has_many :comments, dependent: :destroy
+  belongs_to :user, through: :list
 
   validates :url, :title, presence: true
   validates :title, length: { maximum: 50 }
