@@ -1,0 +1,14 @@
+<div class="col-md-3 col-sm-6 mt-3">
+  <div class="product-grid p-4">
+    <div class="product-image">
+        <h3 class="title">
+        <%= link_to "#{gift.title}", gift_path(gift)%>
+      </h3>
+      <p class="text-capitalize"><%= gift.description %></p>
+      <div>
+        <%= link_to "Ver Mas", gift_path(gift), class:"btn btn-primary text-uppercase" %>
+        <div class="price">$ <%= number_with_precision(gift.price, :precision => 0, :delimiter => ',') %></div>
+      </div>
+    </div>
+  </div>
+</div>

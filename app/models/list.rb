@@ -6,4 +6,5 @@ class List < ApplicationRecord
   validates :title, uniqueness: true
   validates :title, length: { maximum: 30 }
   validates :description, length: { maximum: 280 }
+  validates :privacy, inclusion: { in: %w[pública privada] }
 end
