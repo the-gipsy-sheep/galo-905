@@ -1,0 +1,10 @@
+<h1>Elige un nuevo Regalo</h1>
+<%= simple_form_for [@list, @gift] do |f| %>
+  <%= f.input :url %>
+  <%= f.input :title %>
+  <%= f.input :gift_picture %>
+  <%= f.input :price %>
+  <%= f.input :ranking %>
+  <%= f.input :description %>
+  <%= f.submit "Agrega tu Regalo", class: "btn btn-primary" %>
+<% end %>

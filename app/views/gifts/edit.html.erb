@@ -1,0 +1,10 @@
+<%= simple_form_for(@gift) do |f| %>
+  <%= f.input :url %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :status %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :ranking %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
