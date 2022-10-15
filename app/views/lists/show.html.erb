@@ -11,7 +11,9 @@
   </div>
 </div>
 <div class="container">
-  <% @list.gifts.all.each do |gift| %>
-    <%= render 'shared/gift_card', gift: gift %>
-  <% end %>
+  <div class="row">
+    <% @list.gifts.all.each do |gift| %>
+      <%= render 'shared/gift_card', gift: gift %>
+    <% end %>
+  </div>
 </div>
