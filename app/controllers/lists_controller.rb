@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_user, only: %i[new create edit update destroy my_products]
+  before_action :set_user, only: %i[new create edit update destroy]
   before_action :set_list, only: %i[show edit update destroy]
 
   def index
