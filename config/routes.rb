@@ -3,9 +3,15 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-  resources :lists do
-    resources :gifts, only: %i[index new create]
+
+  resources :lists, shallow: true do
+    resources :gifts
   end
+
+  # LO ANTERIOR, ES LO MISMO QUE DECIR: (Shallow, nestea solo con new y create)
+  # resources :lists do
+  #   resources :gifts, only: %i[new create]
+  # end
 
   resources :gifts, only: %i[show edit update destroy] do
     resources :comments, only: :create
