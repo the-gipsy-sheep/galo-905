@@ -1,5 +1,7 @@
 require "open-uri"
 
+puts "Creando usuarios..."
+
 gonchi = User.new(
   email: "gonchi@gmail.com",
   password: "123456",
@@ -60,6 +62,9 @@ demian.photo.attach(io: photo_demian, filename: "fotodemian.png", content_type: 
 
 demian.save
 
+puts "4 usuarios creados correctamente"
+puts "Creando Listas..."
+
 varios = List.create(title: "me lo merezco", description: "un poco de todo", privacy: "pública", user_id: pao.id)
 gourmet = List.create(title: "gourmet", user_id: pao.id)
 libros = List.create(title: "libros", privacy: "pública", user_id: demian.id)
@@ -69,7 +74,8 @@ general = List.create(title: "general", description: "todas las cosas que quiero
 privada1 = List.create(title: "privada", privacy: "privado", user_id: juli.id)
 favoritos = List.create(title: "favoritos", user_id: juli.id)
 
-
+puts "8 listas creadas correctamente"
+puts "Creando regalos..."
 
 gift1 = Gift.new(
   url: "https://www.theverge.com/23393115/meta-quest-pro-vr-headset-hands-on-specs-price",
@@ -200,6 +206,11 @@ gift8.list_id = tecnologia.id
 
 gift8.save
 
+puts "8 regalos creados correctamente"
+puts "añadiendo comentarios..."
+
 Comment.create(content: "yo también lo quiero, re fan de harry", user_id: gonchi.id, gift_id: gift6.id)
 Comment.create(content: "invitame y lo tomamos juntos viendo la serie", user_id: juli.id, gift_id: gift5.id)
 Comment.create(content: "están buenisimos, yo los tengo y no me arrepiento", user_id: pao.id, gift_id: gift7.id)
+
+puts "Todo listo!"
