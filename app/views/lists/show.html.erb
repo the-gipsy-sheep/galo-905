@@ -1,5 +1,5 @@
 <div class="justify-content-center bg-dark d-flex flex-column align-items-center" style="height: 300px; color: white; font-size: 1.8em;">
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle align-items-center", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <%= cl_image_tag @list.user.photo.key, class: "avatar dropdown-toggle align-items-center", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
   <p><%= @list.user.user_name %></p>
   <div>
     <h1 class="text-uppercase "><%= @list.title %></h1>
