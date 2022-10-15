@@ -1,0 +1,6 @@
+<h1>Sector de prueba para comentarios</h1>
+
+<%= simple_form_for [gift, comment] do |f| %>
+    <%= f.input :content, input_html: { maxlength: 500 } %>
+    <%= f.button :submit %>
+<% end %>

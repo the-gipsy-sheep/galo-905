@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # end
 
   resources :gifts, only: %i[show edit update destroy] do
-    resources :comments, only: :create
+    resources :comments, only: %i[create]
   end
 
   resources :comments, only: %i[update destroy]
