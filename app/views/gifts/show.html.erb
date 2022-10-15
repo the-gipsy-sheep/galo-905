@@ -3,13 +3,15 @@
 
 <h2><%= @gift.title %></h2>
 <p>LINK: <%= @gift.url %></p>
-<%= cl_image_tag @gift.photo.key, height: 300, width: 400, crop: :fill %>
+<% if @gift.photo.key == nil%>
+<% else %>
+  <%= cl_image_tag @gift.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
 <p>PRECIO: $<%= @gift.price %></p>
 <p>CUANTO LO QUIERO: <%= @gift.ranking %></p>
 <p>DESCRIPCIÓN: <%= @gift.description %></p>
 <p>ESTADO: <%= @gift.status %></p>
 
-<%= link_to "Delete",
-  gift_path(@gift),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+    <h4 class="text-uppercase ">Pertenece a la Lista: <%= @gift.list.title %></h4>
+
+  <%= link_to '<i class="fa fa-trash"></i>'.html_safe,   gift_path(@gift), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
