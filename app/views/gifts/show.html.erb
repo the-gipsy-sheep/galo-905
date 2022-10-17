@@ -15,3 +15,9 @@
     <h4 class="text-uppercase ">Pertenece a la Lista: <%= @gift.list.title %></h4>
 
   <%= link_to '<i class="fa fa-trash"></i>'.html_safe,   gift_path(@gift), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
+
+<% @gift.comments.each do |comment| %>
+  <li><%= comment.content %></li>
+<% end %>
+
+<%= render "shared/new_comment", gift: @gift, comment: @comment %>
