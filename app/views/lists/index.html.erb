@@ -10,6 +10,9 @@
 </div>
 <div class="container">
   <div class="row">
+    <%= render 'list_new_form' %>
+  </div>
+  <div class="row">
     <ul class="list-group my-4">
       <% @lists.where(privacy: "pública").each do |list| %>
         <%= render 'list_card', list: list %>
