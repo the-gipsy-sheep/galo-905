@@ -1,17 +1,12 @@
-<div class="bg-grey justify-content-center d-flex align-items-center " style="height: 200px; color: white; font-size: 1.8em;">
+<div style="font-size: 1.8em;">
   <div class="module-border-wrap" >
-    <div class="module text-uppercase justify-content-center flex-column  d-flex align-items-center">
-      <h1 style="">Crear una Nueva Lista</h1>
+    <div class="module">
+      <div class="container text-uppercase justify-content-between  d-flex align-items-center my-0 py-0">
+        <h1 style="">Crear una Nueva Lista</h1>
+      </div>
     </div>
   </div>
 </div>
 <div class="container">
-  <%= simple_form_for @list do |f| %>
-    <%= f.input :title,
-    label: "Titulo" %>
-    <%= f.input :description,
-    label: "Descripcion" %>
-    <%= f.input :privacy %>
-    <%= f.button :submit, "Crear Lista", class: "btn btn-primary"  %>
-  <% end %>
+  <%= render 'list_new_form' %>
 </div>

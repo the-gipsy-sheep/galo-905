@@ -1,17 +1,24 @@
-<div class="bg-grey justify-content-center d-flex align-items-center " style="height: 200px; color: white; font-size: 1.8em;">
-  <div class="module-border-wrap" >
-    <div class="module text-uppercase justify-content-center flex-column  d-flex align-items-center">
-      <h1 style="">Listas</h1>
-      <%= link_to "Crear Lista", new_list_path, class: "btn btn-primary" %>
+<div data-controller="form-index">
+  <div style="font-size: 1.8em;">
+    <div class="module-border-wrap" >
+      <div class="module">
+        <div class="container text-uppercase justify-content-between  d-flex align-items-center my-0 py-0">
+          <h1 style="">Listas</h1>
+          <%= link_to "Crear Lista", new_list_path, class: "btn btn-primary", data: {action: "click->form-index#showCreate"} %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row">
-    <ul class="list-group my-4">
-      <% @lists.where(privacy: "pública").each do |list| %>
-        <%= render 'list_card', list: list %>
-      <% end %>
-    </ul>
+  <div class="container">
+    <div class="row d-none" data-form-index-target="form">
+      <%= render 'list_new_form' %>
+    </div>
+    <div class="row">
+      <ul class="list-group my-4">
+        <% @lists.where(privacy: "pública").each do |list| %>
+          <%= render 'list_card', list: list %>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
