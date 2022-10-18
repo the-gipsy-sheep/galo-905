@@ -1,0 +1,31 @@
+
+<h1>ReGALO</h1>
+
+<div class="container">
+  <div>
+    <div class="row">
+      <div class="col-6">
+        <% if @gift.photo.key == nil%>
+        <% else %>
+          <%= cl_image_tag @gift.photo.key, style: "width:100%; height:500px;", crop: :fill %>
+        <% end %>
+      </div>
+      <div class="col-6 bg-dark text-white" style="height:500px;">
+        <h2><%= @gift.title %></h2>
+        <a href="<%= @gift.url %>">Ir al Sitio</a>
+        <p>PRECIO: $<%= @gift.price %></p>
+        <p>CUANTO LO QUIERO: <%= @gift.ranking %></p>
+        <p>DESCRIPCIÓN: <%= @gift.description %></p>
+        <p>ESTADO: <%= @gift.status %></p>
+        <p>Pertenece a la Lista: <%= @gift.list.title %></p>
+        <%= link_to '<i class="fa fa-trash"></i>'.html_safe,   gift_path(@gift), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
+      </div>
+    </div>
+  </div>
+
+  <% @gift.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+
+  <%= render "shared/new_comment", gift: @gift, comment: @comment %>
+</div>
