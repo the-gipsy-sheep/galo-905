@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import FormIndexController from "./form_index_controller"
+application.register("form-index", FormIndexController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
