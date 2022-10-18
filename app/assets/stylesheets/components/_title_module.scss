@@ -1,13 +1,17 @@
 .module-border-wrap {
-  width: 80%;
+  width: 100%;
   padding: 1rem;
   background: linear-gradient(to right, red, purple);
   padding: 3px;
   margin: auto;
+  margin-top: 0;
 }
 
 .module {
   background: #222;
   color: white;
-  padding: 2rem;
+  padding: 5px 0px;
+  h1 {
+    margin-bottom: 0;
+  }
 }
