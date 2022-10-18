@@ -1,6 +1,7 @@
 <div class="col-3">
   <div class="card-gift">
     <div class="">
+    <%= '<span class="new-gift-badge badge bg-success small">new</span>'.html_safe if gift.created_at >= (Date.today -7)  %>
       <div class="gift-img-container" >
         <% if gift.photo.key == nil%>
         <% else %>
