@@ -12,7 +12,7 @@
       <h2 class="">
         <%= link_to "#{gift.title}", gift_path(gift)%>
       </h2>
-      <p class="gift-info text-capitalize"><%= gift.description %></p>
+      <p class="gift-info text-capitalize"><%= gift.description? ? gift.description : "Sin detalle" %></p>
       <div class="gift-bottom">
         <%= link_to "Ver Mas", gift_path(gift.id), class: "btn btn-primary", data: { turbo_frame: "modal" } %>
       </div>
