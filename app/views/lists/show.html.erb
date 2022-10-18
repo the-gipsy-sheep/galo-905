@@ -15,7 +15,7 @@
   </div>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row my-4">
     <% @list.gifts.all.each do |gift| %>
       <%= render 'gift_card', gift: gift %>
     <% end %>
