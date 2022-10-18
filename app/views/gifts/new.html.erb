@@ -2,7 +2,7 @@
 <%= simple_form_for [@list, @gift] do |f| %>
   <%= f.input :url %>
   <%= f.input :title %>
-  <%= f.input :gift_picture %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :price %>
   <%= f.input :ranking %>
   <%= f.input :description %>

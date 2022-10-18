@@ -11,21 +11,28 @@ class GiftsController < ApplicationController
   end
 
   def create
-    @gift = Gift.new(list_params)
+    @gift = Gift.new(gift_params)
     @gift.list = @list
-    @gift.save
-    redirect_to list_path(@list)
+    if @gift.save
+      redirect_to list_path(@list)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
+    @comment = Comment.new
   end
 
   def edit
   end
 
   def update
-    @gift.update(gift_params)
-    redirect_to gift_path(@gift)
+    if @gift.update(gift_params)
+      redirect_to gift_path(@gift)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -41,10 +48,6 @@ class GiftsController < ApplicationController
 
   def set_list
     @list = List.find(params[:list_id])
-  end
-
-  def list_params
-    params.require(:gift).permit(:url, :title, :gift_picture, :price, :ranking, :description, :status, :photo)
   end
 
   def gift_params

@@ -1,19 +1,23 @@
-<div class="justify-content-center bg-dark d-flex flex-column align-items-center" style="height: 300px; color: white; font-size: 1.8em;">
-  <%= cl_image_tag @list.user.photo.key, class: "avatar dropdown-toggle align-items-center", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-  <p><%= @list.user.user_name %></p>
-  <div>
-    <h1 class="text-uppercase "><%= @list.title %></h1>
-    <p class="text-center small"><%= @list.description %></h1>
-  </div>
-  <div class="dflex">
-    <%= link_to "Agregar Producto", new_list_gift_path(@list, @gift), class: "btn btn-primary" %>
-    <%= link_to '<i class="fa fa-trash"></i>'.html_safe, list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
+<div class="bg-grey justify-content-center d-flex align-items-center " style="color: white; font-size: 1.8em;">
+  <div class="module-border-wrap" >
+    <div class="module text-uppercase justify-content-center flex-column  d-flex align-items-center">
+      <%= cl_image_tag @list.user.photo.key, class: "avatar dropdown-toggle align-items-center", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <p><%= @list.user.user_name %></p>
+      <div>
+        <h1 class="text-uppercase "><%= @list.title %></h1>
+        <p class="text-center small"><%= @list.description %></h1>
+      </div>
+      <div class="dflex">
+        <%= link_to "Agregar Producto", new_list_gift_path(@list, @gift), class: "btn btn-primary" %>
+        <%= link_to '<i class="fa fa-trash"></i>'.html_safe, list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
+      </div>
+    </div>
   </div>
 </div>
 <div class="container">
   <div class="row">
     <% @list.gifts.all.each do |gift| %>
-      <%= render 'shared/gift_card', gift: gift %>
+      <%= render 'gift_card', gift: gift %>
     <% end %>
   </div>
 </div>

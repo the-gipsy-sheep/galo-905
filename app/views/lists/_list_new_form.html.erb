@@ -1,0 +1,10 @@
+  <div class="">
+    <%= simple_form_for @list, html: { class: "d-flex justify-content-between form-list align-items-center"} do |f| %>
+      <%= f.input :title, label: false,
+      placeholder: "Titulo", wrapper_html: { class: 'form-item' }  %>
+      <%= f.input :description, label: false,
+      placeholder: "Descripcion de la lista", wrapper_html: { class: 'form-item' } %>
+      <%= f.input :privacy, label:false, collection: ['pública', 'privada'], wrapper_html: { class: 'form-item' }   %>
+      <%= f.button :submit, "+", class: "btn btn-primary" %>
+    <% end %>
+  </div>

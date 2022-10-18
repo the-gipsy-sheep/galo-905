@@ -1,15 +1,9 @@
+<main class="container">
 
-<h1>ReGALO</h1>
+  <%= turbo_frame_tag "modal" do %>
 
-<h2><%= @gift.title %></h2>
-<p>LINK: <%= @gift.url %></p>
-<%= cl_image_tag @gift.photo.key, height: 300, width: 400, crop: :fill %>
-<p>PRECIO: $<%= @gift.price %></p>
-<p>CUANTO LO QUIERO: <%= @gift.ranking %></p>
-<p>DESCRIPCIÓN: <%= @gift.description %></p>
-<p>ESTADO: <%= @gift.status %></p>
-
-<%= link_to "Delete",
-  gift_path(@gift),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+    <div class="modal-body">
+      <%= render "gifts/show", gift: @gift %>
+    </div>
+  <% end %>
+</main>
