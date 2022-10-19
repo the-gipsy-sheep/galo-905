@@ -21,4 +21,7 @@
       </ul>
     </div>
   </div>
+  <div>
+    <%= link_to "Nueva Lista", new_list_path if policy(List).new? %>
+  </div>
 </div>

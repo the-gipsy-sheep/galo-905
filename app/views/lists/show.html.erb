@@ -20,4 +20,12 @@
       <%= render 'gift_card', gift: gift %>
     <% end %>
   </div>
+  <div>
+    <% if policy(@list).edit? %>
+      <%= link_to "Editar esta lista", edit_list_path(@list) %> |
+    <% end %>
+  </div>
+  <div>
+    <%= button_to "Destruir esta lista", @list, method: :delete if policy(@list).destroy? %>
+  </div>
 </div>

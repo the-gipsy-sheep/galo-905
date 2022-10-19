@@ -3,21 +3,24 @@ class ListsController < ApplicationController
   before_action :set_list, only: %i[show edit update destroy]
 
   def index
-    @lists = List.all
+    #@lists = List.all
     @list = List.new
+    @list = policy_scope(List)
   end
 
   def new
     @list = List.new
+    authorize @list
   end
 
   def show
-
+    authorize @list
   end
 
   def create
     @list = List.new(list_params)
     @list.user = @user
+    authorize @list
     if @list.save
       redirect_to lists_path
     else
@@ -26,9 +29,11 @@ class ListsController < ApplicationController
   end
 
   def edit
+    authorize @list
   end
 
   def update
+    authorize @list
     if @list.update(list_params)
       redirect_to lists_path
     else
@@ -37,6 +42,7 @@ class ListsController < ApplicationController
   end
 
   def destroy
+    authorize @list
     @list.destroy
     redirect_to lists_path
   end
