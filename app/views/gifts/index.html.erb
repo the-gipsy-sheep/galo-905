@@ -1,0 +1,4 @@
+<%# PARA HACER EL GRID, SE HACE POR ARRIBA DE LA ITERACIÓN %>
+<% @gifts.each do |gift| %>
+  <%= render 'lists/gift_card', gift: gift %>
+<% end %>
