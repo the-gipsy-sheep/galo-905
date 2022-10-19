@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to @gift
+    redirect_to gift_path(@comment)
   end
 
   private

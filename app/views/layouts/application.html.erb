@@ -10,25 +10,26 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
+  <body class="d-flex flex-column min-vh-100">
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
 
     <%= yield %>
 
 
-<div
-    class="modal"
-    tabindex="-1"
-    data-controller="modal"
-    data-action="turbo:frame-load->modal#open turbo:submit-end->modal#close"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <%= turbo_frame_tag "modal" %>
+    <div
+      class="modal"
+      tabindex="-1"
+      data-controller="modal"
+      data-action="turbo:frame-load->modal#open turbo:submit-end->modal#close"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <%= turbo_frame_tag "modal" %>
+        </div>
       </div>
     </div>
-  </div>
 
-
+    <%= render "shared/footer" %>
   </body>
 </html>
