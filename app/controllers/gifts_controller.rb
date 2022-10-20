@@ -3,6 +3,7 @@ class GiftsController < ApplicationController
   before_action :set_gift, only: %i[show edit update destroy]
 
   def index
+    @gift = policy_scope(Gift)
     if params[:query].present?
       @gifts = Gift.search_by_gift(params[:query])
       # sql_query = <<~SQL
@@ -18,6 +19,7 @@ class GiftsController < ApplicationController
 
   def new
     @gift = Gift.new
+    authorize @gift
   end
 
   def create
@@ -28,13 +30,16 @@ class GiftsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @gift
   end
 
   def show
     @comment = Comment.new
+    authorize @gift
   end
 
   def edit
+    authorize @gift
   end
 
   def update
@@ -43,11 +48,13 @@ class GiftsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+    authorize @gift
   end
 
   def destroy
     @gift.destroy
     redirect_to lists_path, status: :see_other
+    authorize @gift
   end
 
   private
