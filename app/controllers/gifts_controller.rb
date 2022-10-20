@@ -3,7 +3,17 @@ class GiftsController < ApplicationController
   before_action :set_gift, only: %i[show edit update destroy]
 
   def index
-    @gifts = Gift.all
+    if params[:query].present?
+      @gifts = Gift.search_by_gift(params[:query])
+      # sql_query = <<~SQL
+      #   gifts.title @@ :query
+      #   OR gifts.description @@ :query
+      #   OR gifts.price @@ :query
+      # SQL
+      # @gifts = Gift.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @gifts = Gift.all
+    end
   end
 
   def new

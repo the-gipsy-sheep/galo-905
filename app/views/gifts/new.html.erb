@@ -1,10 +1,16 @@
-<h1>Elige un nuevo Regalo</h1>
-<%= simple_form_for [@list, @gift] do |f| %>
-  <%= f.input :url %>
-  <%= f.input :title %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :price %>
-  <%= f.input :ranking %>
-  <%= f.input :description %>
-  <%= f.submit "Agrega tu Regalo", class: "btn btn-primary" %>
-<% end %>
+<div style="font-size: 1.8em;">
+  <div class="module-border-wrap" >
+    <div class="module">
+      <div class="container text-uppercase justify-content-between  d-flex align-items-center my-0 py-0">
+        <h1>Agregá tu Regalo Deseado</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <%= render 'gift_new_form' %>
+    </div>
+  </div>
+</div>

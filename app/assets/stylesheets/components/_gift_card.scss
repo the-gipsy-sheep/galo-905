@@ -1,0 +1,69 @@
+.card-gift {
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-radius: 5px;
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    transform: scale(1.05)
+  }
+  .gift-bottom {
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  .gift-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.card-gift img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+.card-gift h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  padding-left: 10px;
+  text-transform: uppercase;
+}
+
+.card-gift p {
+  font-size: 12px;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.card-gift .gift-info {
+  margin: 10px 0;
+  padding-left: 10px;
+}
+
+.gift-price {
+  font-size: 20px !important;
+  opacity: 1;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.new-gift-badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}

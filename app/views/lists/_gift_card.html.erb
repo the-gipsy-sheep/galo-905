@@ -1,17 +1,20 @@
 <div class="col-3">
-  <div class="product-grid p-4">
-    <div class="product-image">
-        <h3 class="title">
+  <div class="card-gift">
+    <div class="">
+    <%= '<span class="new-gift-badge badge bg-success small">new</span>'.html_safe if gift.created_at >= (Date.today -7)  %>
+      <div class="gift-img-container" >
+        <% if gift.photo.key == nil%>
+        <% else %>
+          <%= cl_image_tag gift.photo.key, height: 100, width: 100, crop: :fill %>
+        <% end %>
+      </div>
+      <p class=" gift-price">$ <%= number_with_precision(gift.price, :precision => 0, :delimiter => ',') %></p>
+      <h2 class="">
         <%= link_to "#{gift.title}", gift_path(gift)%>
-      </h3>
-    <% if gift.photo.key == nil%>
-    <% else %>
-      <%= cl_image_tag gift.photo.key, height: 100, width: 100, crop: :fill %>
-    <% end %>
-      <p class="text-capitalize"><%= gift.description %></p>
-      <div>
+      </h2>
+      <p class="gift-info text-capitalize"><%= gift.description? ? gift.description : "Sin detalle" %></p>
+      <div class="gift-bottom">
         <%= link_to "Ver Mas", gift_path(gift.id), class: "btn btn-primary", data: { turbo_frame: "modal" } %>
-        <div class="price">$ <%= number_with_precision(gift.price, :precision => 0, :delimiter => ',') %></div>
       </div>
     </div>
   </div>

@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   #   resources :gifts, only: %i[new create]
   # end
 
-  resources :gifts, only: %i[index show edit update destroy] do
+  resources :gifts, only: %i[show index edit update destroy] do
+
     resources :comments, only: %i[create]
   end
 
