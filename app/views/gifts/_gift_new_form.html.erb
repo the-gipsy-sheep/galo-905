@@ -1,0 +1,11 @@
+  <%= simple_form_for [@list, @gift], html: { class: "d-flex justify-content-between form-list align-items-center flex-column"} do |f| %>
+    <%= f.input :title, placeholder:"Titulo", label: false, wrapper_html: { class: 'form-gift-item' } %>
+    <%= f.input :description, placeholder:"Descripcion del Regalo", label: false, wrapper_html: { class: 'form-gift-item' }  %>
+    <%= f.input :url, placeholder:"URL del Producto", label: false, wrapper_html: { class: 'form-gift-item' }  %>
+    <div class="d-flex justify-content-around">
+      <%= f.input :price, label: "Precio", wrapper_html: { class: 'form-gift-item px-1' }  %>
+      <%= f.input :ranking, label: "Deseometro", wrapper_html: { class: 'form-gift-item px-1' }  %>
+    </div>
+    <%= f.input :photo, label: "Foto del Regalo", as: :file, wrapper_html: { class: 'form-gift-item' }  %>
+    <%= f.submit "Agrega tu Regalo", class: "btn btn-primary" %>
+  <% end %>
