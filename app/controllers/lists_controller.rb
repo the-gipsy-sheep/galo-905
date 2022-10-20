@@ -1,11 +1,12 @@
 class ListsController < ApplicationController
   before_action :set_user, only: %i[new create edit update destroy]
   before_action :set_list, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     # @lists = List.all
     @list = List.new
-    @list = policy_scope(List)
+    @lists = policy_scope(List)
   end
 
   def new

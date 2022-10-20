@@ -3,13 +3,17 @@ class ListPolicy < ApplicationPolicy
     # NOTE: Be explicit about which records you allow access to!
 
     def resolve
-    # scope.all
-      scope.where(user: user) # Si el User puede solo ver sus listas
+      scope.all
+      # scope.where(user: user) # Si el User puede solo ver sus listas
     end
   end
     #  def my_lists?
       #  true
     #  end
+
+  def index?
+    true
+  end
 
   def show?
     true
