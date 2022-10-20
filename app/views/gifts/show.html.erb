@@ -6,4 +6,13 @@
       <%= render "gifts/show", gift: @gift %>
     </div>
   <% end %>
+  <div>
+    <% if policy(@gift).edit? %>
+      <%= link_to "Editar este Regalo", edit_gift_path(@gift) %> |
+    <% end %>
+  </div>
+  <div>
+    <%= button_to "Destruir este Regalo", @gift, method: :delete if policy(@gift).destroy? %>
+  </div>
+</div>
 </main>
