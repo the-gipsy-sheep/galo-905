@@ -10,6 +10,27 @@
     </div>
   </div>
   <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-8">
+      <%= form_with url: list_gifts_path(:list_id), method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Busca un regalo"
+        %>
+        <%= submit_tag "BUSCAR", class: "btn btn-primary" %>
+      <% end %>
+      <div id="gifts">
+        <% @list.gifts.each do |gift| %>
+          <h4><%= gift.title %></h4>
+          <p><%= gift.description %></p>
+          <p><%= gift.price %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container">
     <div class="row d-none" data-form-index-target="form">
       <%= render 'list_new_form' %>
     </div>
