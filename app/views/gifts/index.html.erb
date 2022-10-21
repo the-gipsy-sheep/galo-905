@@ -1,7 +1,7 @@
 
 <%# PARA HACER EL GRID, SE HACE POR ARRIBA DE LA ITERACIÓN %>
-<% @gifts.each do |gift| %>
-  <%= render 'lists/gift_card', gift: gift %>
-<% end %>
-
-
+<div class="cards">
+  <% @gifts.each do |gift| %>
+    <%= render 'gifts_cards', gift: gift %>
+  <% end %>
+</div>
