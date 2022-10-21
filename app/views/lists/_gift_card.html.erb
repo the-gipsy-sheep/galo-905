@@ -10,7 +10,7 @@
       </div>
       <p class=" gift-price">$ <%= number_with_precision(gift.price, :precision => 0, :delimiter => ',') %></p>
       <h2 class="">
-        <%= link_to "#{gift.title}", gift_path(gift)%>
+        <%= link_to "#{gift.title}", gift_path(gift), data: { turbo_frame: "modal" }%>
       </h2>
       <p class="gift-info text-capitalize"><%= gift.description? ? gift.description : "Sin detalle" %></p>
       <div class="gift-bottom">

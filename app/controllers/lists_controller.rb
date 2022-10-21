@@ -1,18 +1,21 @@
 class ListsController < ApplicationController
   before_action :set_user, only: %i[new create edit update destroy]
   before_action :set_list, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @lists = List.all
+    # @lists = List.all
     @list = List.new
+    @lists = policy_scope(List)
   end
 
   def new
     @list = List.new
+    authorize @list
   end
 
   def show
-
+    authorize @list
   end
 
   def create
@@ -23,9 +26,11 @@ class ListsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @list
   end
 
   def edit
+    authorize @list
   end
 
   def update
@@ -34,11 +39,13 @@ class ListsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    authorize @list
   end
 
   def destroy
     @list.destroy
     redirect_to lists_path
+    authorize @list
   end
 
   private

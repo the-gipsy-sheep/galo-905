@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[update destroy]
 
+  def index
+    @comments = policy_scope(Comment)
+  end
+
   def create
     @gift = Gift.find(params[:gift_id])
     @comment = Comment.new(comment_params)
@@ -11,6 +15,7 @@ class CommentsController < ApplicationController
     else
       render @gift, status: :unprocessable_entity
     end
+    authorize @comment
   end
 
   def update
@@ -19,11 +24,13 @@ class CommentsController < ApplicationController
     else
       render @gift, status: :unprocessable_entity
     end
+    authorize @comment
   end
 
   def destroy
     @comment.destroy
     redirect_to gift_path(@comment)
+    authorize @comment
   end
 
   private
