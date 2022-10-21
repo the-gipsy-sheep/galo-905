@@ -1,4 +1,6 @@
-<li class="list-card list-group-item d-flex justify-content-between align-items-center py-4">
+
+<li class="card-category list-card list-group-item d-flex justify-content-between align-items-center py-4 mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/djkzewvwv/image/upload/v1666316478/development/card_navide%C3%B1a_vrn06y.jpg')">
+<%# consultar a andres como modificar para subir una imagen %>
   <%= '<span class="new-badge badge bg-success small">new</span>'.html_safe if list.created_at >= (Date.today -7)  %>
   <div>
     <h2><%= list.title %></h1>

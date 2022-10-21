@@ -37,7 +37,7 @@
     <div class="row">
       <ul class="list-group my-4">
         <% @lists.where(privacy: "pública").each do |list| %>
-          <%= render 'list_card', list: list %>
+            <%= render 'list_card', list: list %>
         <% end %>
       </ul>
     </div>
