@@ -8,7 +8,5 @@ class Gift < ApplicationRecord
   validates :description, length: { maximum: 280 }
 
   include PgSearch::Model
-  pg_search_scope :search_by_gift, against: %i[title price description], using: {
-    tsearch: { prefix: true }
-  }
+  multisearchable against: %i[title price description]
 end

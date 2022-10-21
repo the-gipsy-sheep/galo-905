@@ -11,4 +11,7 @@ class User < ApplicationRecord
 
   validates :user_name, uniqueness: true, presence: true
   validates :user_name, length: { in: 6..30 }
+
+  include PgSearch::Model
+  multisearchable against: %i[user_name first_name last_name]
 end

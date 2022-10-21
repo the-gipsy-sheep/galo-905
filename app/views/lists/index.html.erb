@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="container">
-  <div class="row justify-content-center">
+    <div class="row justify-content-center">
     <div class="col-sm-8">
       <%= form_with url: list_gifts_path(:list_id), method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
@@ -20,6 +20,7 @@
         %>
         <%= submit_tag "BUSCAR", class: "btn btn-primary" %>
       <% end %>
+
       <div id="gifts">
         <% @list.gifts.each do |gift| %>
           <h4><%= gift.title %></h4>
