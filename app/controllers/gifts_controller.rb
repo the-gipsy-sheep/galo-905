@@ -5,7 +5,8 @@ class GiftsController < ApplicationController
   def index
     @gift = policy_scope(Gift)
     if params[:query].present?
-      @gifts = Gift.search_by_gift(params[:query])
+      @gifts = PgSearch.multisearch(params[:query])
+
       # sql_query = <<~SQL
       #   gifts.title @@ :query
       #   OR gifts.description @@ :query
