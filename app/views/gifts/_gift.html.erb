@@ -24,7 +24,20 @@
   </div>
 
   <% @gift.comments.each do |comment| %>
-    <li><%= comment.content %></li>
+    <div class="card mt-2">
+      <div class="card-header">
+        <%= comment.user.user_name %> dice:
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p><%= comment.content %></p>
+          <footer class="blockquote-footer">Publicado el <cite title="Source Title"><%= comment.created_at %></cite></footer>
+          <% if comment.user == current_user %>
+            <%= link_to '<i class="fa fa-trash"></i>'.html_safe, comment_path, class:"btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
+          <% end %>
+        </blockquote>
+      </div>
+    </div>
   <% end %>
 
   <%= render "shared/new_comment", gift: @gift, comment: @comment %>
