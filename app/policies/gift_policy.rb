@@ -2,7 +2,7 @@ class GiftPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.all
+        scope.all
       # scope.where(user: user) # If users can only see their gift
     end
   end
@@ -16,12 +16,12 @@ class GiftPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.list.user == user
     # record: the gift passed to the `authorize` method in controller
     # user: the `current_user` signed in with Devise
   end
 
   def destroy?
-    record.user == user
+    record.list.user == user
   end
 end

@@ -1,41 +1,41 @@
 <div class="container">
-  <div>
-    <div class="row">
-      <div class="col-6">
-        <% if @gift.photo.key == nil%>
-        <% else %>
-          <%= cl_image_tag @gift.photo.key, style: "width:100%; height:500px;", crop: :fill %>
-        <% end %>
-      </div>
-      <div class="col-6 bg-dark text-white" style="height:500px;">
-        <h2><%= @gift.title %></h2>
-        <a href="<%= @gift.url %>">Ir al Sitio</a>
-        <p>PRECIO: $<%= @gift.price %></p>
-        <p>CUANTO LO QUIERO: <%= @gift.ranking %></p>
-        <p>DESCRIPCIÓN: <%= @gift.description %></p>
-        <p>ESTADO: <%= @gift.status %></p>
-        <p>Pertenece a la Lista: <%= @gift.list.title %></p>
-        <%= link_to '<i class="fa fa-trash"></i>'.html_safe,   gift_path(@gift), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
-      </div>
+  <div class="row">
+    <div class="col-6">
+      <% if @gift.photo.key == nil%>
+        <%# Aca va la imagen random %>
+      <% else %>
+        <%= cl_image_tag @gift.photo.key, style: "width:100%; height:500px;", crop: :fill %>
+      <% end %>
+    </div>
+    <div class="col-6 bg-dark text-white" style="height:500px;">
+      <h2> <%= @gift.title %> </h2>
+      <a href="<%= @gift.url %>"> Ir al Sitio </a>
+      <p>PRECIO: $ <%= @gift.price %> </p>
+      <p>CUANTO LO QUIERO: <%= @gift.ranking %> </p>
+      <p>DESCRIPCIÓN: <%= @gift.description %> </p>
+      <p>ESTADO: <%= @gift.status %> </p>
+      <p>Pertenece a la Lista: <%= @gift.list.title %> </p>
+      <%= link_to '<i class="fa fa-trash"></i>'.html_safe, gift_path(@gift), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"}  if policy(@gift).destroy? %>
+      <%= link_to "Editar este Regalo", edit_gift_path(@gift) if policy(@gift).edit? %>
     </div>
   </div>
-
-  <% @gift.comments.each do |comment| %>
-    <div class="card mt-2">
-      <div class="card-header">
-        <%= comment.user.user_name %> dice:
+  <div>
+    <% @gift.comments.each do |comment| %>
+      <div class="card mt-2">
+        <div class="card-header">
+          <%= comment.user.user_name %> dice:
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p><%= comment.content %></p>
+            <footer class="blockquote-footer">Publicado el <cite title="Source Title"><%= comment.created_at %></cite></footer>
+            <% if comment.user == current_user %>
+              <%= link_to '<i class="fa fa-trash"></i>'.html_safe, comment_path, class:"btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
+            <% end %>
+          </blockquote>
+        </div>
       </div>
-      <div class="card-body">
-        <blockquote class="blockquote mb-0">
-          <p><%= comment.content %></p>
-          <footer class="blockquote-footer">Publicado el <cite title="Source Title"><%= comment.created_at %></cite></footer>
-          <% if comment.user == current_user %>
-            <%= link_to '<i class="fa fa-trash"></i>'.html_safe, comment_path, class:"btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
-          <% end %>
-        </blockquote>
-      </div>
-    </div>
-  <% end %>
-
-  <%= render "shared/new_comment", gift: @gift, comment: @comment %>
+    <% end %>
+    <%= render "shared/new_comment", gift: @gift, comment: @comment %>
+  </div>
 </div>

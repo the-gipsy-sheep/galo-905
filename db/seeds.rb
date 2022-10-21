@@ -37,7 +37,7 @@ juli = User.new(
   password: "123456",
   first_name: "Julian",
   last_name: "Chadwick",
-  user_name: "jchad",
+  user_name: "jchad91",
   address: "Av. Gotica 91",
   birth_date: "1991/11/21"
 )
@@ -69,9 +69,9 @@ varios = List.create(title: "me lo merezco", description: "un poco de todo", pri
 gourmet = List.create(title: "gourmet", user_id: pao.id)
 libros = List.create(title: "libros", privacy: "pública", user_id: demian.id)
 tecnologia = List.create(title: "tecno", user_id: demian.id)
-privada = List.create(title: "personal", description: "mis intereses privados", privacy: "privado", user_id: gonchi.id)
+privada = List.create(title: "personal", description: "mis intereses privados", privacy: "privada", user_id: gonchi.id)
 general = List.create(title: "general", description: "todas las cosas que quiero que me regalen", user_id: gonchi.id)
-privada1 = List.create(title: "privada", privacy: "privado", user_id: juli.id)
+privada1 = List.create(title: "privada", privacy: "privada", user_id: juli.id)
 favoritos = List.create(title: "favoritos", user_id: juli.id)
 
 puts "8 listas creadas correctamente"

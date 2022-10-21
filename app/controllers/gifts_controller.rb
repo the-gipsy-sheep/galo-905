@@ -3,7 +3,6 @@ class GiftsController < ApplicationController
   before_action :set_gift, only: %i[show edit update destroy]
 
   def index
-    @gift = policy_scope(Gift)
     if params[:query].present?
       @gifts = PgSearch.multisearch(params[:query])
 
@@ -15,6 +14,7 @@ class GiftsController < ApplicationController
       # @gifts = Gift.where(sql_query, query: "%#{params[:query]}%")
     else
       @gifts = Gift.all
+      # @gifts = policy_scope(Gift)
     end
   end
 
