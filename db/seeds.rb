@@ -37,7 +37,7 @@ juli = User.new(
   password: "123456",
   first_name: "Julian",
   last_name: "Chadwick",
-  user_name: "jchad",
+  user_name: "jchad91",
   address: "Av. Gotica 91",
   birth_date: "1991/11/21"
 )
