@@ -1,16 +1,5 @@
-<div data-controller="form-index">
-  <div style="font-size: 1.8em;">
-    <div class="module-border-wrap" >
-      <div class="module">
-        <div class="container text-uppercase justify-content-between  d-flex align-items-center my-0 py-0">
-          <h1 style="">Listas</h1>
-          <%= link_to "Crear Lista", new_list_path, class: "btn btn-primary", data: {action: "click->form-index#showCreate"} %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-  <div class="row justify-content-center">
+<div class="container">
+  <div class="my-3 row justify-content-center">
     <div class="col-sm-8">
       <%= form_with url: list_gifts_path(:list_id), method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,

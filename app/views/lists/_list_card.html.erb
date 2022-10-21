@@ -1,14 +1,16 @@
 <li class="list-card list-group-item d-flex justify-content-between align-items-center py-4">
-  <%= '<span class="new-badge badge bg-success small">new</span>'.html_safe if list.created_at >= (Date.today -7)  %>
-  <div>
-    <h2><%= list.title %></h1>
-    <p><%= list.description %></p>
-  </div>
-  <div class="d-flex flex-column justify-content-between align-items-center">
-    <div class="m-1">
-      <i class="fa-sharp fa-solid fa-gift"></i>
-      <span class="badge bg-primary rounded-pill m-0"><%= list.gifts.count %></span>
+  <%= link_to list_path(list) do %>
+    <%= '<span class="new-badge badge bg-success small">new</span>'.html_safe if list.created_at >= (Date.today -7)  %>
+    <div>
+      <h2><%= list.title %></h1>
+      <p><%= list.description %></p>
     </div>
-    <%= link_to "Ver Más", list_path(list), class:"btn btn-primary text-uppercase" %>
-  </div>
+    <div class="d-flex flex-column justify-content-between align-items-center">
+      <div class="m-1">
+        <i class="fa-sharp fa-solid fa-gift"></i>
+        <span class="badge bg-primary rounded-pill m-0"><%= list.gifts.count %></span>
+      </div>
+      <%= link_to "Ver Más", list_path(list), class:"btn btn-primary text-uppercase" %>
+    </div>
+  <% end %>
 </li>

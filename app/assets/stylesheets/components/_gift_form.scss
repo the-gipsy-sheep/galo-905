@@ -1,14 +1,19 @@
 .form-gift {
-  padding: 1rem;
+  padding: 2rem;
   background-color: #222;
   opacity: 0.6;
   margin: 1rem;
   background: linear-gradient(to right, red, purple);
   border-radius: 5px;
   .form-gift-item {
+    background-color: transparent;
+    border: none;
     margin-bottom: 0px !important;
-    color: $primary;
+    color: $body-color;
     margin: 10px 0;
-    font-size: 0.7em;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
   }
 }
