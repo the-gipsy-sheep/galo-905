@@ -16,12 +16,12 @@ class GiftPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.list.user == user
     # record: the gift passed to the `authorize` method in controller
     # user: the `current_user` signed in with Devise
   end
 
   def destroy?
-    record.user == user
+    record.list.user == user
   end
 end

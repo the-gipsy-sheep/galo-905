@@ -1,33 +1,26 @@
 <div data-controller="form-index">
-  <div style="font-size: 1.8em;">
-    <div class="module-border-wrap" >
-      <div class="module">
-        <div class="container text-uppercase justify-content-between  d-flex align-items-center my-0 py-0">
-          <h1 style="">Listas</h1>
-          <%= link_to "Crear Lista", new_list_path, class: "btn btn-primary", data: {action: "click->form-index#showCreate"} %>
+  <div class="d-flex justify-content-around align-items-center">
+    <%= link_to "Crear Lista", new_list_path, class: "btn btn-primary", data: {action: "click->form-index#showCreate"} if policy(List).new? %>
+    <div class="container">
+      <div class="row my-3 justify-content-center">
+        <div class="col-sm-8">
+          <%= form_with url: list_gifts_path(:list_id), method: :get, class: "d-flex" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Busca un regalo"
+            %>
+            <%= submit_tag "BUSCAR", class: "btn btn-primary" %>
+          <% end %>
+          <div id="gifts">
+            <% @list.gifts.each do |gift| %>
+              <h4><%= gift.title %></h4>
+              <p><%= gift.description %></p>
+              <p><%= gift.price %></p>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-sm-8">
-      <%= form_with url: list_gifts_path(:list_id), method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Busca un regalo"
-        %>
-        <%= submit_tag "BUSCAR", class: "btn btn-primary" %>
-      <% end %>
-      <div id="gifts">
-        <% @list.gifts.each do |gift| %>
-          <h4><%= gift.title %></h4>
-          <p><%= gift.description %></p>
-          <p><%= gift.price %></p>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>
   <div class="container">
@@ -41,8 +34,5 @@
         <% end %>
       </ul>
     </div>
-  </div>
-  <div>
-    <%= link_to "Nueva Lista", new_list_path if policy(List).new? %>
   </div>
 </div>
