@@ -8,24 +8,17 @@
         <p class="text-center small"><%= @list.description %></h1>
       </div>
       <div class="dflex">
-        <%= link_to "Agregar Producto", new_list_gift_path(@list, @gift), class: "btn btn-primary" %>
-        <%= link_to '<i class="fa fa-trash"></i>'.html_safe, list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
+        <%= link_to "Agregar Producto", new_list_gift_path(@list, @gift), class: "btn btn-primary" if policy(@list).destroy? %>
+        <%= link_to '<i class="fa fa-trash"></i>'.html_safe, list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} if policy(@list).destroy?  %>
+        <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_list_path(@list), class:"btn btn-primary" if policy(@list).edit? %>
       </div>
     </div>
   </div>
 </div>
 <div class="container">
-  <div class="row my-4">
+  <div class="cards my-4">
     <% @list.gifts.all.each do |gift| %>
       <%= render 'gift_card', gift: gift %>
     <% end %>
-  </div>
-  <div>
-    <% if policy(@list).edit? %>
-      <%= link_to "Editar esta lista", edit_list_path(@list) %> |
-    <% end %>
-  </div>
-  <div>
-    <%= button_to "Destruir esta lista", @list, method: :delete if policy(@list).destroy? %>
   </div>
 </div>
