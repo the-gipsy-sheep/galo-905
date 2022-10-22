@@ -1,4 +1,5 @@
   <%= simple_form_for [@list, @gift], html: { class: "d-flex justify-content-between form-gift align-items-center flex-column"} do |f| %>
+    <%= f.association :list, label: false, prompt: "Elije una Lista", selected: @list.id, include_blank: false, collection: List.where(user_id: current_user),  wrapper_html: { class: 'form-control form-gift-item' }  %>
     <%= f.input :url, placeholder:"URL del Producto", label: false, wrapper_html: { class: 'form-control form-gift-item' }  %>
     <%= f.input :title, placeholder:"Titulo", label: false, wrapper_html: { class: 'form-control form-gift-item' } %>
     <%= f.input :description, placeholder:"Descripcion del Regalo", label: false, wrapper_html: { class: 'form-control form-gift-item' }  %>

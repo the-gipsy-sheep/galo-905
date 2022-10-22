@@ -8,8 +8,15 @@
     </div>
     <div class="row">
       <ul class="list-group my-4">
-        <% @lists.where(privacy: "pública").each do |list| %>
+        <%# Faltaria filtrar privacidad %>
+        <% if params[:user].present? %>
+          <% @lists.where(user_id: params[:user]).each do |list| %>
             <%= render 'list_card', list: list %>
+          <% end %>
+        <% else %>
+          <% @lists.where(privacy: "pública").each do |list| %>
+            <%= render 'list_card', list: list %>
+          <% end %>
         <% end %>
       </ul>
     </div>
