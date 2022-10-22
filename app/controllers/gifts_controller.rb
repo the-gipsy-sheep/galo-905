@@ -24,9 +24,8 @@ class GiftsController < ApplicationController
 
   def create
     @gift = Gift.new(gift_params)
-    @gift.list = @list
     if @gift.save
-      redirect_to list_path(@list)
+      redirect_to list_path(@gift.list_id)
     else
       render :new, status: :unprocessable_entity
     end
@@ -53,7 +52,7 @@ class GiftsController < ApplicationController
 
   def destroy
     @gift.destroy
-    redirect_to lists_path, status: :see_other
+    redirect_to list_path(@gift.list_id), status: :see_other
     authorize @gift
   end
 
@@ -68,6 +67,6 @@ class GiftsController < ApplicationController
   end
 
   def gift_params
-    params.require(:gift).permit(:url, :title, :gift_picture, :price, :ranking, :description, :status, :photo)
+    params.require(:gift).permit(:url, :title, :gift_picture, :price, :ranking, :description, :status, :photo, :list_id)
   end
 end

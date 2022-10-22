@@ -14,4 +14,10 @@ class User < ApplicationRecord
 
   include PgSearch::Model
   multisearchable against: %i[user_name first_name last_name]
+
+  after_save :create_default_list
+
+  def create_default_list
+    List.create(title: "Lista Principal", description: "Mi Lista Principal", privacy: "pública", user_id: self)
+  end
 end
