@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: %i[update destroy]
+  resources :users, only: [:show]
 end
+
+

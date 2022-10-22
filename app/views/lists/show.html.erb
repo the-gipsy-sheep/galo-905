@@ -8,8 +8,8 @@
         <p class="text-center small"><%= @list.description %></h1>
       </div>
       <div class="dflex">
-        <%= link_to "Agregar Producto", new_list_gift_path(@list, @gift), class: "btn btn-primary" %>
-        <%= link_to '<i class="fa fa-trash"></i>'.html_safe, list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
+        <%= link_to "Agregar Producto", new_list_gift_path(@list, @gift), class: "btn btn-primary" if @list.user == @current_user %>
+        <%= link_to '<i class="fa fa-trash"></i>'.html_safe, list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} if @list.user == @current_user%>
       </div>
     </div>
   </div>
