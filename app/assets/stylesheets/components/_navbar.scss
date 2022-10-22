@@ -1,7 +1,9 @@
 .navbar-lewagon {
   justify-content: space-evenly;
-  background: #535353;
-  opacity: 0.9;
+  
+  background: rgb(150, 150, 150);
+  background-color: transparent;
+  transition: 0.5s background-color ease;
   z-index: 100;
 
   .search-input {
@@ -14,6 +16,7 @@
     font-weight: bold;
     color: #1EDD88;
   }
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -22,4 +25,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-lewagon-white {
+  background-color: rgb(150, 150, 150);
 }
