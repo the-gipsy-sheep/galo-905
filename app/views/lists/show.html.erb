@@ -1,31 +1,22 @@
-<div class="bg-grey justify-content-center d-flex align-items-center " style="color: white; font-size: 1.8em;">
-  <div class="module-border-wrap" >
-    <div class="module text-uppercase justify-content-center flex-column  d-flex align-items-center">
+<div class="container">
+  <div class="text-uppercase justify-content-around d-flex align-items-center my-4">
+    <div class="d-flex flex-column align-items-center">
       <%= cl_image_tag @list.user.photo.key, class: "avatar dropdown-toggle align-items-center", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <p><%= @list.user.user_name %></p>
-      <div>
-        <h1 class="text-uppercase "><%= @list.title %></h1>
-        <p class="text-center small"><%= @list.description %></h1>
-      </div>
+      <p class="text-center small"><i class="fa-solid fa-cake-candles"></i> <%= @list.user.birth_date %></p>
       <div class="dflex">
-        <%= link_to "Agregar Producto", new_list_gift_path(@list, @gift), class: "btn btn-primary" %>
+        <%= link_to '<i class="fa-solid fa-circle-plus"></i> <i class="fa-sharp fa-solid fa-gift"></i>'.html_safe, new_list_gift_path(@list, @gift), class: "btn btn-primary" %>
         <%= link_to '<i class="fa fa-trash"></i>'.html_safe, list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
       </div>
     </div>
+    <div class="d-flex flex-column align-items-center">
+      <h1 class="text-uppercase "><%= @list.title %></h1>
+      <p class="text-center small"><%= @list.description %></p>
+    </div>
   </div>
-</div>
-<div class="container">
-  <div class="row my-4">
+  <div class="cards my-4">
     <% @list.gifts.all.each do |gift| %>
       <%= render 'gift_card', gift: gift %>
     <% end %>
-  </div>
-  <div>
-    <% if policy(@list).edit? %>
-      <%= link_to "Editar esta lista", edit_list_path(@list) %> |
-    <% end %>
-  </div>
-  <div>
-    <%= button_to "Destruir esta lista", @list, method: :delete if policy(@list).destroy? %>
   </div>
 </div>
