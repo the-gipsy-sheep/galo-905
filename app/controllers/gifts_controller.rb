@@ -1,11 +1,11 @@
 class GiftsController < ApplicationController
   before_action :set_list, only: %i[new create]
   before_action :set_gift, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     if params[:query].present?
       @gifts = PgSearch.multisearch(params[:query])
-
       # sql_query = <<~SQL
       #   gifts.title @@ :query
       #   OR gifts.description @@ :query
@@ -13,8 +13,7 @@ class GiftsController < ApplicationController
       # SQL
       # @gifts = Gift.where(sql_query, query: "%#{params[:query]}%")
     else
-      @gifts = Gift.all
-      # @gifts = policy_scope(Gift)
+      @gifts = policy_scope(Gift)
     end
   end
 
