@@ -1,9 +1,14 @@
 .navbar-lewagon {
   justify-content: space-evenly;
-  background: rgb(150, 150, 150);
+  background: #535353;
+  opacity: 0.7;
 
   .search-input {
     max-width: 300px
+  }
+  .nav-link {
+    font-weight: bold;
+    color: #1EDD88;
   }
 }
 
