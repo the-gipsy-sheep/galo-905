@@ -1,7 +1,8 @@
 .navbar-lewagon {
   justify-content: space-evenly;
   background: #535353;
-  opacity: 0.7;
+  opacity: 0.9;
+  z-index: 100;
 
   .search-input {
     max-width: 300px
