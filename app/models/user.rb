@@ -17,7 +17,9 @@ class User < ApplicationRecord
 
   after_save :create_default_list
 
+  private
+
   def create_default_list
-    List.create(title: "Lista Principal", description: "Mi Lista Principal", privacy: "pública", user_id: self)
+    List.create(title: "Lista Principal", description: "Mi Lista Principal", privacy: "pública", user_id: current_user.id)
   end
 end
