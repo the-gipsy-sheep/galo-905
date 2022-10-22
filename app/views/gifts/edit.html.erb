@@ -1,10 +1,14 @@
 <%= simple_form_for(@gift) do |f| %>
-  <%= f.input :url %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :status %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :ranking %>
-  <%= f.input :price %>
-  <%= f.submit %>
+  <div class="form-inputs w-50">
+  <%= f.input :url, label: "Ingresar la URL" %>
+  <%= f.input :title, label: "Titulo" %>
+  <%= f.input :description, label: "Descripcion" %>
+  <%= f.input :status, label: "Estado" %>
+  <%= f.input :photo, label: "Foto", as: :file %>
+  <%= f.input :ranking, label: "Puntuacion" %>
+  <%= f.input :price, label: "Precio" %>
+  </div>
+  <div class="form-actions">
+      <%= f.button :submit, "Actualizar Gift", class: "btn-primary" %>
+    </div>
 <% end %>
