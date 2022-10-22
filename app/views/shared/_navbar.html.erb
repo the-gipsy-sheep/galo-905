@@ -1,6 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon"
   data-controller="navbar"
-  data-action="scroll@window->navbar#updateNavbar">
+  data-action="scroll@window->navbar#updateNavbar"
+  data-transition-enter="ease-in-out duration-500">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logos/galo_logo.png" %>
