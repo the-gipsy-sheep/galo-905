@@ -1,6 +1,10 @@
 .navbar-lewagon {
   justify-content: space-evenly;
   background: rgb(150, 150, 150);
+
+  .search-input {
+    max-width: 300px
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
