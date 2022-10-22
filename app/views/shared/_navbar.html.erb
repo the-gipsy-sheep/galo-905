@@ -8,9 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <li class="search-input">
+        <div class="search-input">
           <%= form_with url: list_gifts_path(:list_id), method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
               params[:query],
@@ -21,7 +19,9 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             <% end %>
           <% end %>
-        </li>
+        </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item active">
           <%= link_to "Explorar Listas", lists_path(), class: "nav-link" %>
         </li>
