@@ -10,6 +10,11 @@ application.register("form-index", FormIndexController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
+
+import NavbarController from "./navbar_controller"
+application.register("navbar", NavbarController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)

@@ -1,4 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top"
+  data-controller="navbar"
+  data-action="scroll@window->navbar#updateNavbar">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logos/galo_logo.png" %>
@@ -8,38 +10,39 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-        <div>
+        <div class="search-input">
           <%= form_with url: list_gifts_path(:list_id), method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
               placeholder: "Busca usuarios o regalos"
             %>
-            <%= submit_tag "BUSCAR", class: "btn btn-outline-success" %>
+            <%= button_tag(type: "submit", class: "btn btn-outline-success") do %>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            <% end %>
           <% end %>
         </div>
-          <li class="nav-item active">
-            <%= link_to "Mis Listas", lists_path, class: "nav-link" %>
-          </li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <%= link_to "Explorar Listas", lists_path(), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Explorar regalos", gifts_path, class: "nav-link" %>
+        </li>
+        <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Mis Regalos", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Nuevo Regalo", "#", class: "nav-link" %>
+            <%= link_to "Nuevo Regalo", new_list_gift_path(List.find_by_user_id(current_user), @gift), class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Mis Amigos", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Explorar regalos", gifts_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mi perfil", "#", class: "dropdown-item" %>
+              <%= link_to "Mis Listas", lists_path(user: current_user), class: "dropdown-item" %>
+              <%= link_to "Mis Regalos", gifts_path(user: current_user), class: "dropdown-item" %>
               <%= link_to "Editar usuario", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Desloguearme", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>

@@ -1,11 +1,11 @@
 class GiftsController < ApplicationController
   before_action :set_list, only: %i[new create]
   before_action :set_gift, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     if params[:query].present?
       @gifts = PgSearch.multisearch(params[:query])
-
       # sql_query = <<~SQL
       #   gifts.title @@ :query
       #   OR gifts.description @@ :query
@@ -13,8 +13,7 @@ class GiftsController < ApplicationController
       # SQL
       # @gifts = Gift.where(sql_query, query: "%#{params[:query]}%")
     else
-      @gifts = Gift.all
-      # @gifts = policy_scope(Gift)
+      @gifts = policy_scope(Gift)
     end
   end
 
@@ -25,9 +24,8 @@ class GiftsController < ApplicationController
 
   def create
     @gift = Gift.new(gift_params)
-    @gift.list = @list
     if @gift.save
-      redirect_to list_path(@list)
+      redirect_to list_path(@gift.list_id)
     else
       render :new, status: :unprocessable_entity
     end
@@ -54,7 +52,7 @@ class GiftsController < ApplicationController
 
   def destroy
     @gift.destroy
-    redirect_to lists_path, status: :see_other
+    redirect_to list_path(@gift.list_id), status: :see_other
     authorize @gift
   end
 
@@ -69,6 +67,6 @@ class GiftsController < ApplicationController
   end
 
   def gift_params
-    params.require(:gift).permit(:url, :title, :gift_picture, :price, :ranking, :description, :status, :photo)
+    params.require(:gift).permit(:url, :title, :gift_picture, :price, :ranking, :description, :status, :photo, :list_id)
   end
 end

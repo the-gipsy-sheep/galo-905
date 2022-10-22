@@ -13,8 +13,14 @@
       <% end %>
     <% end %>
   <% else %>
-    <% @gifts.each do |gift| %>
-      <%= render "lists/gift_card", gift: gift %>
+    <% if params[:user].present? %>
+      <% @gifts.includes(:list).where('lists.user_id = ?', params[:user]).references(:lists).each do |gift| %>
+        <%= render "lists/gift_card", gift: gift %>
+      <% end %>
+    <% else %>
+      <% @gifts.includes(:list).where('lists.privacy = ?', 'pública').references(:lists).each do |gift| %>
+        <%= render "lists/gift_card", gift: gift %>
+      <% end %>
     <% end %>
   <% end %>
 </div>
