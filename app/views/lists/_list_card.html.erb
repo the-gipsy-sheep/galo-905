@@ -3,7 +3,8 @@
     <%= '<span class="new-badge badge bg-success small">new</span>'.html_safe if list.created_at >= (Date.today -7)  %>
     <div>
       <h2><%= list.title %></h1>
-      <a href="https://wa.me/?text=Mira mi lista de regalos en Galo: http://localhost:3000<%= list_path(list) %>" target="_blank"><i class="fa-brands fa-square-whatsapp"></i>Comparte tu lista </a>
+      <p><%= list.description %></p>
+      <a class="whatsapp-share" href="https://wa.me/?text=Mira mi lista de regalos en Galo: http://localhost:3000<%= list_path(list) %>" target="_blank"><i class="fa-brands fa-square-whatsapp"></i> Compartír </a>
     </div>
     <div class="d-flex flex-column justify-content-between align-items-center">
       <div class="m-1">
@@ -14,5 +15,3 @@
     </div>
   <% end %>
 </li>
-
-<%# <li class="card-category list-card list-group-item d-flex justify-content-between align-items-center py-4 mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/djkzewvwv/image/upload/v1666316478/development/card_navide%C3%B1a_vrn06y.jpg')"> %>
