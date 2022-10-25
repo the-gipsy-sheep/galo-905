@@ -1,7 +1,6 @@
 .navbar-lewagon {
   justify-content: space-evenly;
   background-color: transparent;
-  transition: 0.5s background-color ease;
   z-index: 100;
   .search-input {
     margin-left: 20px;
@@ -25,4 +24,11 @@
 
 .navbar-lewagon-white {
   background-color: rgb(150, 150, 150);
+}
+
+.fixed-top-transition {
+  transition: 0.5s background-color ease;
+  position: fixed;
+  top: 0;
+  color: red;
 }
