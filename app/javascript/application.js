@@ -6,4 +6,3 @@ import "aos"
 import "scroll_animado"
 import "edit_card"
 import "./plugins"
-
