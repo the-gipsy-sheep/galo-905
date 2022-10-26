@@ -1,8 +1,10 @@
+
+
 let id = (id) => document.getElementById(id);
 
 let classes = (classes) => document.getElementsByClassName(classes);
-let title = id("titulo"),
-  description = id("descripcion"),
+let nombreDeUsuario = id("nombreDeUsuario"),
+  email = id("email"),
   contrasena = id("contrasena"),
   formulario = id("formulario"),
 
