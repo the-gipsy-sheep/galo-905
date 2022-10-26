@@ -16,7 +16,7 @@
         <p class=" gift-price">$ <%= number_with_precision(gift.searchable.price, :precision => 0, :delimiter => ',') %></p>
       </div>
       <div class="gift-bottom">
-        <%= link_to "Ver Mas", gift_path(gift.id), class: "btn btn-primary w-100", data: { turbo_frame: "modal" } %>
+        <%= link_to "Ver Mas", gift_path(gift.searchable.id), class: "btn btn-primary w-100", data: { turbo_frame: "modal" } %>
       </div>
     </div>
   </div>

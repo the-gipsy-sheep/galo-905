@@ -1,0 +1,54 @@
+.gradient-text {
+  color: transparent;
+  background: conic-gradient(
+    #320e3b 15%,
+    #4C2A85 15%, #4C2A85 32%,
+    #6B7FD7 32%, #6B7FD7 58%,
+    #BCEDF6 58%, #BCEDF6 72%,
+    #DDFBD2 72%, #DDFBD2 87%,
+    #FFD2FC 87%
+  );
+
+  background-size: 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: expand-reverse 05s ease forwards;
+}
+
+h1 {
+  font-size: 300px;
+}
+
+.gradient-text:hover {
+  animation: expand 0.5s ease forwards;
+}
+
+@keyframes expand {
+  0% {
+    background-size: 50%;
+    background-position: 0 0;
+  }
+  30% {
+    background-size: 120%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 250%;
+    background-position: -5em -1em;
+}
+}
+
+@keyframes expand-reverse {
+  100% {
+    background-size: 250%;
+    background-position: -5em -1em;
+  }
+  30% {
+    background-size: 120%;
+    background-position: 0 1em;
+  }
+  0% {
+    background-size: 50%;
+    background-position: 0 0;
+}
+}

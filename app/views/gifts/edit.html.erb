@@ -1,10 +1,9 @@
 <div class="container gift-edit-container my-3">
   <div class="row">
     <div class="d-flex justify-content-around align-items-center">
-      <div class="d-flex flex-column justify-content-around" data-aos="flip-left"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="2000">
-          <%= image_tag "cards-edit/regalo5.jpg" %>
+      <div class="d-flex flex-column justify-content-around" data-aos="fade-up"
+     data-aos-duration="3000">
+          <%= cl_image_tag @gift.photo.key %>
       </div>
       <div class="col-6">
         <h2>Edita tu Regalo</h2>

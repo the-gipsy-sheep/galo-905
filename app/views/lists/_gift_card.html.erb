@@ -12,7 +12,18 @@
       <h2 class="">
         <%= link_to "#{gift.title}", gift_path(gift), data: { turbo_frame: "modal" }%>
       </h2>
-      <p class="gift-info text-capitalize"><%= gift.description? ? gift.description : "Sin detalle" %></p>
+      <p class="gift-info text-capitalize">
+      <% if gift.description?%>
+        <% if gift.description.length > 75 %>
+          <div class='textControl'><%= truncate(gift.description, length: 75) %></div>
+        <%= link_to '...Leer más', gift_path(gift.id), data: { turbo_frame: "modal" } %>
+        <% else %>
+          <%= gift.description %>
+        <% end %> </p>
+      <% else %>
+        "Sin detalle"
+      <% end %> </p>
+
       <div class="gift-bottom">
         <%= link_to "Ver Mas", gift_path(gift.id), class: "btn btn-primary", data: { turbo_frame: "modal" } %>
       </div>
