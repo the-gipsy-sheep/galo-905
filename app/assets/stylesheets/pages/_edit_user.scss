@@ -1,4 +1,4 @@
-.gift-edit-container {
+.edit-user-container {
   background-color: #de8bb9;
   img {
     max-height: 600px;
@@ -15,16 +15,17 @@
   }
   .btn {
     margin-top: 15px;
-    width: 100%;
+    width: 75%;
     height: 45px;
-    background-color: #de8bb9;
-    border: 2px solid #f2796e;
+    background-color: #db8bde;
+    border: 2px solid #9c6ef2;
     border-radius: 8px;
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.1s ease;
+
   }
   .btn:hover {
     opacity: 0.8;

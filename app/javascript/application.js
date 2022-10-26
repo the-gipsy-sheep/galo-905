@@ -3,10 +3,6 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 import "aos"
-<<<<<<< HEAD
-import "./scroll_animado"
-import "./edit_card"
-=======
 
 // import "scroll_animado"
 // import "edit_card"
@@ -14,4 +10,11 @@ import "./edit_card"
 
 AOS.init();
 
->>>>>>> master
+const scrollAnimado = (elemento) => {
+  const destino = document.querySelector (elemento)
+  destino.scrollIntoView ({
+      behavior: 'smooth'
+  });
+}
+
+scrollAnimado(".banner")

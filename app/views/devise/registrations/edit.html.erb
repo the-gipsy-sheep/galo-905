@@ -1,19 +1,21 @@
-<div class="container">
+<div class="container edit-user-container my-3">
+  <div class="row">
+    <div class="d-flex justify-content-around align-items-center">
 
-<h2>Actualizar <%= resource_name.to_s.humanize %></h2>
+      <div class="col-6">
+        <h2>Actualizar <%= resource_name.to_s.humanize %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs w-75">
+        <%= f.input :email, label: "Correo Electronico", required: true, autofocus: true %>
 
-  <div class="form-inputs w-75">
-    <%= f.input :email, label: "Correo Electronico", required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Esperando confirmacion: <%= resource.unconfirmed_email %></p>
+        <% end %>
 
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                hint: "Dejar en blanco si no deseas cambiarlo",
                 required: false,
                 input_html: { autocomplete: "new-password" },
                 label: "Contraseña" %>
@@ -22,7 +24,7 @@
                 input_html: { autocomplete: "new-password" },
                 label: "Confirmar Contraseña" %>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                hint: "Necesitamos tu contrasena actual para confirmar los cambios",
                 required: true,
                 input_html: { autocomplete: "current-password" },
                 label: "Repetir Contraseña" %>
@@ -55,7 +57,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Actualizar", class: "btn-primary" %>
+    <%= f.button :submit, "Actualizar", class: "btn-primary my-3" %>
   </div>
 <% end %>
 
@@ -63,6 +65,7 @@
   <div>No estas de acuerdo?</div>
   <%= button_to "Cancelar Cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
 </div>
-
+</div>
+</div>
 <%= link_to "Volver", :back %>
 </div>
