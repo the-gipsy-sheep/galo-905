@@ -4,17 +4,7 @@ import "./controllers"
 import "bootstrap"
 import "aos"
 
-// import "scroll_animado"
-// import "edit_card"
+//import "main"
 // import "./plugins"
 
 AOS.init();
-
-const scrollAnimado = (elemento) => {
-  const destino = document.querySelector (elemento)
-  destino.scrollIntoView ({
-      behavior: 'smooth'
-  });
-}
-
-scrollAnimado(".banner")
