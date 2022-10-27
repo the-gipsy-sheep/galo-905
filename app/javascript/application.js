@@ -5,6 +5,8 @@ import "bootstrap"
 import "aos"
 
 //import "main"
+import "../assets/javascript/scroll_animado"
+// import "edit_card"
 // import "./plugins"
 
 AOS.init();
