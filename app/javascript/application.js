@@ -6,6 +6,7 @@ import "aos"
 
 //import "main"
 import "../assets/javascript/scroll_animado"
+import "../assets/javascript/homecards"
 // import "edit_card"
 // import "./plugins"
 
