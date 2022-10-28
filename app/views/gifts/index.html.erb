@@ -1,26 +1,46 @@
 
 <%# PARA HACER EL GRID, SE HACE POR ARRIBA DE LA ITERACIÓN %>
-<div class="cards">
-  <% if params[:query].present? %>
-    <% @elements.each do |element| %>
-      <% if element.searchable.respond_to?(:user_name) %>
-        <div class="card">
-          <%# <%= gift.searchable.user_name %>
-          <%= render "search_user", element: element %>
-        </div>
-      <% else %>
-        <%= render "search_gift", element: element %>
-      <% end %>
-    <% end %>
-  <% else %>
-    <% if params[:user].present? %>
-      <% @gifts.includes(:list).where('lists.user_id = ?', params[:user]).references(:lists).each do |gift| %>
-        <%= render "lists/gift_card", gift: gift %>
+<div class="container">
+  <ul class="list-group list-group-horizontal justify-content-end my-3">
+      <div class="flex-grow text-uppercase m-auto text-uppercase text-bold"> Coleccion de regalos</div>
+      <li class="list-group-item d-flex align-items-center">
+        <p class="m-0 small">Precio</p>
+        <%= link_to '<i class="fa-solid fa-arrow-up-1-9"></i>'.html_safe, gifts_path(order:"price"), class: "btn btn-outline-secondary btn-sm m-1" %>
+        <%= link_to '<i class="fa-solid fa-arrow-down-9-1"></i>'.html_safe, gifts_path(order:"price", desc: true), class: "btn btn-outline-secondary btn-sm" %>
+      </li>
+      <li class="list-group-item d-flex align-items-center">
+        <p class="m-0 small">Fecha Agregado</p>
+        <%= link_to '<i class="fa-solid fa-arrow-up-a-z"></i>'.html_safe, gifts_path(order:"created_at"), class: "btn btn-outline-secondary btn-sm m-1" %>
+        <%= link_to '<i class="fa-solid fa-arrow-down-z-a"></i>'.html_safe, gifts_path(order:"created_at", desc: true), class: "btn btn-outline-secondary btn-sm" %>
+      </li>
+      <li class="list-group-item d-flex align-items-center">
+        <p class="m-0 small">Título</p>
+        <%= link_to '<i class="fa-solid fa-arrow-up-a-z"></i>'.html_safe, gifts_path(order:"title"), class: "btn btn-outline-secondary btn-sm m-1" %>
+        <%= link_to '<i class="fa-solid fa-arrow-down-z-a"></i>'.html_safe, gifts_path(order:"title", desc: true), class: "btn btn-outline-secondary btn-sm" %>
+      </li>
+  </ul>
+  <div class="cards my-3">
+    <% if params[:query].present? %>
+      <% @elements.each do |element| %>
+        <% if element.searchable.respond_to?(:user_name) %>
+          <div class="card">
+            <%# <%= gift.searchable.user_name %>
+            <%= render "search_user", element: element %>
+          </div>
+        <% else %>
+          <%= render "search_gift", element: element %>
+        <% end %>
       <% end %>
     <% else %>
-      <% @gifts.includes(:list).where('lists.privacy = ?', 'pública').references(:lists).each do |gift| %>
-        <%= render "lists/gift_card", gift: gift %>
+      <% if params[:user].present? %>
+        <% @gifts.includes(:list).where('lists.user_id = ?', params[:user]).references(:lists).each do |gift| %>
+          <%= render "lists/gift_card", gift: gift %>
+        <% end %>
+      <% else %>
+        <% @gifts.includes(:list).where('lists.privacy = ?', 'pública').references(:lists).each do |gift| %>
+          <%= render "lists/gift_card", gift: gift %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
