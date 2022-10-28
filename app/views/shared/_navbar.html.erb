@@ -35,12 +35,12 @@
             <%= link_to "Nuevo Regalo", new_list_gift_path(List.find_by_user_id(current_user), @gift), class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Mis Amigos", "#", class: "nav-link" %>
+            <%= link_to "Mis Amigos", users_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Mi perfil", "#", class: "dropdown-item" %>
+              <%= link_to "Mi perfil", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Mis Listas", lists_path(user: current_user), class: "dropdown-item" %>
               <%= link_to "Mis Regalos", gifts_path(user: current_user), class: "dropdown-item" %>
               <%= link_to "Editar usuario", edit_user_registration_path, class: "dropdown-item" %>

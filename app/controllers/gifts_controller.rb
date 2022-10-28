@@ -5,7 +5,7 @@ class GiftsController < ApplicationController
 
   def index
     if params[:query].present?
-      @gifts = PgSearch.multisearch(params[:query])
+      @elements = PgSearch.multisearch(params[:query])
       # sql_query = <<~SQL
       #   gifts.title @@ :query
       #   OR gifts.description @@ :query

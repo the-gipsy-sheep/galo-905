@@ -1,0 +1,23 @@
+<div class="col-12 p-3">
+  <div class="card-gift">
+    <div class="">
+    <%= '<span class="new-gift-badge badge bg-success small">new</span>'.html_safe if element.searchable.created_at >= (Date.today -7)  %>
+      <div class="gift-img-container" >
+        <% if element.searchable.photo.key == nil%>
+        <% else %>
+          <%= cl_image_tag element.searchable.photo.key, height: 100, width: 100, crop: :fill %>
+        <% end %>
+      </div>
+      <h2 class="">
+        <%= link_to "#{element.searchable.title}", gift_path(element), data: { turbo_frame: "modal" }%>
+      </h2>
+      <div class="d-flex justify-content-between">
+        <p class="gift-info text-capitalize"><%= element.searchable.list.user.user_name %></p>
+        <p class=" gift-price">$ <%= number_with_precision(element.searchable.price, :precision => 0, :delimiter => ',') %></p>
+      </div>
+      <div class="gift-bottom">
+        <%= link_to "Ver Mas", gift_path(element.searchable.id), class: "btn btn-primary w-100", data: { turbo_frame: "modal" } %>
+      </div>
+    </div>
+  </div>
+</div>
