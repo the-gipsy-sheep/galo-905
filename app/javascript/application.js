@@ -9,4 +9,3 @@ import "aos"
 // import "./plugins"
 
 AOS.init();
-
