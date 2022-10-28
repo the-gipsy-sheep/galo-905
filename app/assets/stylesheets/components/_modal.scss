@@ -1,4 +1,12 @@
 .modal-content {
-  width: 800px;
-  right: 30%;
+  width: 1200px;
+  right: 5% !important;
+}
+.modal-dialog {
+  width: 1140px !important;
+  margin-right: auto;
+  margin-left: auto;
+}
+.modal {
+  --bs-modal-width: 1200px !important;
 }

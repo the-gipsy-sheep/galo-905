@@ -8,6 +8,7 @@
   align-items: center;
   position: relative;
   border-radius: 5px;
+  height: 400px;
   a {
     text-decoration: none;
   }
@@ -15,24 +16,24 @@
     transform: scale(1.05)
   }
   .gift-bottom {
-    padding-left: 10px;
+    padding: 0 10px;
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: space-around;
     margin: 10px 0;
+    align-items: center;
   }
   .gift-img-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
   }
 }
 
 .card-gift img {
-  height: 250px;
-  width: 250px;
-  object-fit: cover;
-  margin: 10px 0;
+  height: 200px;
+  width: 200px;
+  object-fit: fill;
 }
 
 .card-gift h2 {

@@ -1,5 +1,5 @@
 
 <%= simple_form_for [gift, comment] do |f| %>
-    <%= f.input :content, label: "Ingresa tu comentario..." %>
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= f.input :content, placeholder:"Ingresa tu comentario", label: false %>
+    <%= f.button :submit, "Enviar", class: "btn btn-primary" %>
 <% end %>
