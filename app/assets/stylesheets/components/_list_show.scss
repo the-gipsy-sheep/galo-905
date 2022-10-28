@@ -9,7 +9,7 @@
   padding-top: 20px;
   clip-path: polygon(0 0,100% 0,100% calc(100% - 50px),50% 100%,0 calc(100% - 50px));
   background-color: $complementary;
-  background: linear-gradient(to right bottom, $complementary, $blue );
+  background: linear-gradient(to bottom, white, $complementary );
 
   height: 300px;
 }
@@ -17,7 +17,7 @@
   padding: 40px 0;
   clip-path: polygon(0 0,50% 50px,100% 0,100% 100%,0 100%);
   margin-top: -45px;
-  background: linear-gradient(to right bottom, $secondary, $red);
+  background: linear-gradient(to bottom, $complementary, $blue);
 }
 
   .list-header {
