@@ -28,8 +28,9 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @gift = @comment.gift
     @comment.destroy
-    redirect_to gift_path(@comment)
+    redirect_to gift_path(@gift)
     authorize @comment
   end
 
