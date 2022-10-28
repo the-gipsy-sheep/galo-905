@@ -1,8 +1,11 @@
-<div class="container">
-<h2>Ingresar</h2>
+<div class="container session-new-container ">
+  <div class="row">
+    <div class="d-flex justify-content-around align-items-center">
+      <div class="col-8">
+        <h2>Ingresar</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-  <div class="form-inputs w-75">
+  <div class="form-inputs w-100">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
@@ -20,5 +23,7 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
+</div>
 </div>

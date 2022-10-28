@@ -1,5 +1,6 @@
-.edit-user-container {
-  background-color: #c689c6;
+.session-new-container {
+  background-color: #C689C6;
+
 
   h2 {
     text-transform: uppercase;
@@ -12,7 +13,7 @@
     margin-top: 15px;
     width: 100%;
     height: 45px;
-    background-color: #db8bde;
+    background-color: #de8bb9;
     border: 2px solid #9c6ef2;
     border-radius: 8px;
     color: #fff;
@@ -20,7 +21,6 @@
     cursor: pointer;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.1s ease;
-
   }
   .btn:hover {
     opacity: 0.8;
