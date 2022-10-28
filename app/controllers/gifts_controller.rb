@@ -12,6 +12,9 @@ class GiftsController < ApplicationController
       #   OR gifts.price @@ :query
       # SQL
       # @gifts = Gift.where(sql_query, query: "%#{params[:query]}%")
+    elsif params[:order].in? %w[price title create]
+      @gifts = policy_scope(Gift)
+      @gifts = @gifts.order("#{params[:order]} #{params[:desc] ? 'DESC' : ''}")
     else
       @gifts = policy_scope(Gift)
     end
