@@ -3,7 +3,7 @@
   background-color: #222;
   opacity: 0.6;
   margin: 1rem;
-  background: linear-gradient(to right, red, purple);
+  background: linear-gradient(to right, $secondary, $complementary);
   border-radius: 5px;
   .form-item {
     margin-bottom: 0px !important;

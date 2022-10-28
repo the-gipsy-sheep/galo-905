@@ -10,18 +10,18 @@
   }
   .nav-link {
     font-weight: bold;
-    color: $fuschia;
+    color: $primary;
     text-shadow: 1px 0.5px #14141444;
     text-transform: uppercase;
   }
 
   .btn-outline-success {
-    color: $fuschia;
-    border-color: $fuschia;
+    color: $primary;
+    border-color: $primary;
 
   }
   .btn-outline-success:hover {
-    background-color: $fuschia;
+    background-color: $primary;
     color: white;
   }
 }
