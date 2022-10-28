@@ -1,7 +1,16 @@
+$fuschia: #7b00ff;
+$button-bg: $fuschia;
+$button-text-color: #fff;
+$baby-blue: #f8faff;
+
 .banner {
   background-size: cover;
   background-position: center;
   padding: 100px 0;
+  font-size: 16px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  text-align: center;
+  background-color: $baby-blue;
 
 }
 
@@ -17,17 +26,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-$fuschia: #7b00ff;
-$button-bg: $fuschia;
-$button-text-color: #fff;
-$baby-blue: #f8faff;
-
-body{
-  font-size: 16px;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  text-align: center;
-  background-color: $baby-blue;
-}
 .bubbly-button{
   font-family: 'Helvetica', 'Arial', sans-serif;
   display: inline-block;
