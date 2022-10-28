@@ -2,14 +2,14 @@
 <%# PARA HACER EL GRID, SE HACE POR ARRIBA DE LA ITERACIÓN %>
 <div class="cards">
   <% if params[:query].present? %>
-    <% @gifts.each do |gift| %>
-      <% if gift.searchable.respond_to?(:user_name) %>
+    <% @elements.each do |element| %>
+      <% if element.searchable.respond_to?(:user_name) %>
         <div class="card">
-          <%= gift.searchable.user_name %>
-          <%# <%= render "search_user", gift: gift %>
+          <%# <%= gift.searchable.user_name %>
+          <%= render "search_user", element: element %>
         </div>
       <% else %>
-        <%= render "search", gift: gift %>
+        <%= render "search_gift", element: element %>
       <% end %>
     <% end %>
   <% else %>

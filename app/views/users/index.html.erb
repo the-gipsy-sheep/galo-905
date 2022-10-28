@@ -1,0 +1,16 @@
+<div class="cards">
+  <% @users.each do |user| %>
+    <div>
+      <figure class="snip1336">
+        <%= cl_image_tag user.photo.key%>
+        <figcaption>
+          <h2><%= user.first_name %> <%= user.last_name %><span><%= user.user_name %></span></h2>
+          <p><i class="fa-solid fa-map-location-dot"></i> <%= user.address %></p>
+          <p><i class="fa-solid fa-cake-candles"></i> <%= user.birth_date %></p>
+          <a href="<%= user_path(user)%>" class="follow">IR AL PERFIL</a>
+          <a href="#" class="info">More Info</a>
+        </figcaption>
+      </figure>
+    </div>
+  <% end %>
+</div>

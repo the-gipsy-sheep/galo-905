@@ -1,20 +1,24 @@
 
-<div class="container">
+<div class="container d-flex">
   <div class="col-3">
     <figure class="snip1336">
-      <%= cl_image_tag @user.photo.key   %>
-      <%# <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample87.jpg" alt="sample87" /> %>
+      <%= cl_image_tag @user.photo.key%>
       <figcaption>
-        <%# <%= cl_image_tag @user.photo.key   %>
         <h2><%= @user.first_name %> <%= @user.last_name %><span><%= @user.user_name %></span></h2>
         <p><i class="fa-solid fa-map-location-dot"></i> <%= @user.address %></p>
         <p><i class="fa-solid fa-cake-candles"></i> <%= @user.birth_date %></p>
-        <a href="#" class="follow">Follow</a>
+        <a href="<%= user_path(@user)%>" class="follow">IR AL PERFIL</a>
         <a href="#" class="info">More Info</a>
       </figcaption>
     </figure>
   </div>
-  <div class="col-9"  >
-  <p>MÁS INFO</p>
+  <div class="m-4 col-9">
+    <div>
+      <p>LISTAS</p>
+      <% @lists.where(user_id: current_user).each do |list| %>
+      <%# EN LA LINEA DE ARRIBA HAY QUE CAMBIAR PARA QUE SE VEAN LAS LISTAS DE CADA UNO. %>
+          <%= render 'lists/list_card', list: list %>
+      <% end %>
+    </div>
   </div>
 </div>
