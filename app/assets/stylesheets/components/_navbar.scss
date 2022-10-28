@@ -37,3 +37,15 @@
 .navbar-new-bg {
   background-color: rgba(150, 150, 150, 0.688);
 }
+
+.dropdown-menu {
+  background-color: $complementary;
+  border-radius: 5px;
+  opacity: 0.9;
+  text-shadow: 1px 0.5px #14141444;
+  text-transform: uppercase;
+  text-align: center;
+  .dropdown-item:hover {
+    font-weight: bold;
+  }
+}
