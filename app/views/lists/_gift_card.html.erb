@@ -5,7 +5,7 @@
       <div class="gift-img-container" >
         <% if gift.photo.key == nil%>
         <% else %>
-          <%= cl_image_tag gift.photo.key, height: 100, width: 100, crop: :fill %>
+          <%= cl_image_tag gift.photo.key %>
         <% end %>
       </div>
       <p class=" gift-price">$ <%= number_with_precision(gift.price, :precision => 0, :delimiter => ',') %></p>
@@ -14,8 +14,8 @@
       </h2>
       <p class="gift-info text-capitalize">
       <% if gift.description?%>
-        <% if gift.description.length > 75 %>
-          <div class='textControl'><%= truncate(gift.description, length: 75) %></div>
+        <% if gift.description.length > 40 %>
+          <%= truncate(gift.description, length: 40) %>
         <%= link_to '...Leer más', gift_path(gift.id), data: { turbo_frame: "modal" } %>
         <% else %>
           <%= gift.description %>
