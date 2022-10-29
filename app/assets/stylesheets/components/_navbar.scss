@@ -10,7 +10,19 @@
   }
   .nav-link {
     font-weight: bold;
-    color: #1EDD88;
+    color: $primary;
+    text-shadow: 1px 0.5px #14141444;
+    text-transform: uppercase;
+  }
+
+  .btn-outline-success {
+    color: $primary;
+    border-color: $primary;
+
+  }
+  .btn-outline-success:hover {
+    background-color: $primary;
+    color: white;
   }
 }
 

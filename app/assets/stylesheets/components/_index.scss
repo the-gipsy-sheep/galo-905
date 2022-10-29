@@ -3,16 +3,21 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
-@import "list_card";
-@import "list_form";
+@import "footer";
+@import "cards";
 @import "title_module";
 @import "modal";
-@import "footer";
-@import "gift_card";
-@import "gift_form";
-@import "cards";
 @import "banner";
 @import "profile";
 @import "gradient";
 @import "homecard";
+
+
+// views
+@import "list_show";
+@import "list_card";
+@import "list_form";
+
 @import "gift_show";
+@import "gift_card";
+@import "gift_form";

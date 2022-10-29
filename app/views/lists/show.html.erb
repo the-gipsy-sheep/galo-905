@@ -1,25 +1,35 @@
-<div class="container">
-  <div class="text-uppercase justify-content-around d-flex align-items-center my-4">
-    <div class="d-flex flex-column align-items-center">
-      <%= cl_image_tag @list.user.photo.key, class: "avatar dropdown-toggle align-items-center", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <p><%= @list.user.user_name %></p>
-      <p class="text-center small"><i class="fa-solid fa-cake-candles"></i> <%= @list.user.birth_date %></p>
-      <div class="dflex">
-        <%= link_to '<i class="fa-solid fa-circle-plus"></i> <i class="fa-sharp fa-solid fa-gift"></i>'.html_safe, new_list_gift_path(@list, @gift), class: "btn btn-primary" if @list.user == @current_user %>
-        <%= link_to '<i class="fa fa-trash"></i>'.html_safe, list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} if policy(@list).destroy?  %>
-        <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_list_path(@list), class:"btn btn-primary" if policy(@list).edit? %>
+<div id="list-show">
+  <div class="top-section">
+    <div class="container">
+      <div class="list-header text-uppercase justify-content-around d-flex align-items-center my-4">
+        <div class="d-flex flex-column align-items-center">
+          <%= cl_image_tag @list.user.photo.key, class: "avatar dropdown-toggle align-items-center", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <p><%= @list.user.user_name %></p>
+          <p class="text-center small"><i class="fa-solid fa-cake-candles"></i> <%= @list.user.birth_date %></p>
+          <div class="dflex">
+            <%= link_to '<i class="fa-solid fa-circle-plus"></i> <i class="fa-sharp fa-solid fa-gift"></i>'.html_safe, new_list_gift_path(@list, @gift), class: "btn btn-primary" if @list.user == @current_user %>
+            <%= link_to '<i class="fa fa-trash"></i>'.html_safe, list_path(@list), class:"btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} if policy(@list).destroy?  %>
+            <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_list_path(@list), class:"btn btn-primary" if policy(@list).edit? %>
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <h1 class="text-uppercase "><%= @list.title %></h1>
+          <p class="text-center small"><%= @list.description %></p>
+          <div class="m-1">
+            <i class="fa-sharp fa-solid fa-gift"></i>
+            <span class="badge bg-primary rounded-pill m-0"><%= @list.gifts.count %></span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="d-flex flex-column align-items-center">
-      <h1 class="text-uppercase "><%= @list.title %></h1>
-      <p class="text-center small"><%= @list.description %></p>
-    </div>
   </div>
-</div>
-<div class="container">
-  <div class="cards my-4">
-    <% @list.gifts.all.each do |gift| %>
-      <%= render 'gift_card', gift: gift %>
-    <% end %>
+  <div class="bottom-section">
+    <div class="container">
+      <div class="cards my-4">
+        <% @list.gifts.all.each do |gift| %>
+          <%= render 'gift_card', gift: gift %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

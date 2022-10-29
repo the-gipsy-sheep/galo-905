@@ -4,7 +4,7 @@
       placeholder: "Titulo", wrapper_html: { class: 'form-item' }  %>
       <%= f.input :description, label: false,
       placeholder: "Descripcion de la lista", wrapper_html: { class: 'form-item' } %>
-      <%= f.input :privacy, label:false, collection: ['pública', 'privada'], wrapper_html: { class: 'form-item' }   %>
+      <%= f.input :privacy, label:false, collection: ['pública', 'privada'], include_blank: false, wrapper_html: { class: 'form-item' }  %>
       <%= f.button :submit, "+", class: "btn btn-primary" %>
     <% end %>
   </div>

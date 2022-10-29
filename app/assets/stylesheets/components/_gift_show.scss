@@ -1,6 +1,6 @@
 .gift_show {
   @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Montserrat:300,400,700,800|Open+Sans:300');
-  .card{
+  .card-show {
     box-shadow: 0 6px 6px rgba(#000, 0.3);
     transition: 200ms;
     background: #fff;
@@ -23,7 +23,7 @@
 
       .icon{
         flex: 1 0 10px;
-        background: #115dd8;
+        background: $primary;
         color: #fff;
         padding: 10px 10px;
         transition: 200ms;
@@ -95,6 +95,7 @@
           display: block;
           max-width: 500px;
           max-height: 300px;
+          object-fit: cover;
         }
       }
 
@@ -159,8 +160,8 @@
         left: 40px;
         width: calc(100% - 40px);
         height: 3px;
-        background: #115dd8;
-        background: linear-gradient(to right, #115dd8 0%,#115dd8 20%,#ddd 20%,#ddd 100%);
+        background: $primary;
+        background: linear-gradient(to right, $primary 0%, $primary 20%,#ddd 20%,#ddd 100%);
       }
 
       .recommend{
@@ -181,25 +182,25 @@
           font-family: "Montserrat", sans-serif;
           font-weight: 600;
           text-transform: uppercase;
-          color: #115dd8;
+          color: $primary;
         }
       }
 
       .action{
         button{
           cursor: pointer;
-          border: 1px solid #115dd8;
+          border: 1px solid $primary;
           padding: 14px 30px;
           border-radius: 200px;
           color: #fff;
-          background: #115dd8;
+          background: $primary;
           font-family: "Open Sans", sans-serif;
           font-size: 16px;
           transition: 200ms;
 
           &:hover{
             background: #fff;
-            color: #115dd8;
+            color: $primary;
           }
         }
       }
