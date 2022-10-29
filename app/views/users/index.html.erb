@@ -2,7 +2,11 @@
   <% @users.each do |user| %>
     <div>
       <figure class="snip1336">
-        <%= cl_image_tag user.photo.key%>
+        <% if user.photo.attached? %>
+          <%= cl_image_tag user.photo.key%>
+        <% else %>
+          <%= image_tag "random-gift.jpg", crop: :fill %>
+        <% end %>
         <figcaption>
           <h2><%= user.first_name %> <%= user.last_name %><span><%= user.user_name %></span></h2>
           <p><i class="fa-solid fa-map-location-dot"></i> <%= user.address %></p>
