@@ -13,11 +13,12 @@
   background-clip: text;
   -webkit-background-clip: text;
   animation: expand-reverse 05s ease forwards;
+
 }
 
-h1 {
-  font-size: 300px;
-}
+.banner h1 {
+   font-size: 300px;
+ }
 
 .gradient-text:hover {
   animation: expand 0.5s ease forwards;
