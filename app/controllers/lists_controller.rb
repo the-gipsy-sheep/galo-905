@@ -7,6 +7,7 @@ class ListsController < ApplicationController
     # @lists = List.all
     @list = List.new
     @lists = policy_scope(List)
+    @gift = Gift.all
   end
 
   def new
