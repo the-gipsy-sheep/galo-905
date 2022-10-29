@@ -106,15 +106,15 @@ puts "Creando regalos..."
 # GIFTS DE JULI
 
 gift_j1 = Gift.new(
-  url: "https://www.theverge.com/23393115/meta-quest-pro-vr-headset-hands-on-specs-price",
-  title: "Oculus Rift Pro Quest",
-  price: 1500,
+  url: "https://articulo.mercadolibre.com.ar/MLA-1100856715-oculus-quest-2-advanced-all-in-one-casco-vr-128gb-_JM#position=1&search_layout=stack&type=item&tracking_id=485662b9-19b3-43d2-8c93-f5c573ad0572",
+  title: "Oculus Quest 2 Advanced",
+  price: 199_890,
   ranking: rand(1..5),
   description: "Los nuevos lentes de facebook, increibles y tope de gama, para meterse en el futuro con todo",
   status: "disponible"
 )
 
-photo_gift_j1 = URI.open("https://cdn.vox-cdn.com/thumbor/WuID7bBsf6wM0NZWAEbp_vN_awM=/0x0:2040x1360/1400x1050/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/24088515/226334_Oculus_MetaQuest_Pro_AHeath_0003.jpg")
+photo_gift_j1 = URI.open("https://http2.mlstatic.com/D_NQ_NP_2X_714000-MLA45405695173_032021-F.webp")
 
 gift_j1.photo.attach(io: photo_gift_j1, filename: "#{Time.now.to_i}image.png.png", content_type: "image/png")
 gift_j1.list_id = favoritos_j.id
@@ -394,8 +394,7 @@ gift_p1 = Gift.new(
   status: "disponible"
 )
 
-photo_gift_p1 = URI.open("https://i0.wp.com/robbreport.mx/wp-content/uploads/2022/07/house-of-dragon.jpg?w=1260&ssl=1
-  ")
+photo_gift_p1 = URI.open("https://i0.wp.com/robbreport.mx/wp-content/uploads/2022/07/house-of-dragon-2-1.png?resize=290%2C1024&ssl=1")
 
 gift_p1.photo.attach(io: photo_gift_p1, filename: "#{Time.now.to_i}image.png.png", content_type: "image/png")
 gift_p1.list_id = gourmet_p.id
@@ -411,7 +410,7 @@ gift_p2 = Gift.new(
   status: "disponible"
 )
 
-photo_gift_p2 = URI.open("https://http2.mlstatic.com/D_NQ_NP_2X_776323-MLA50408592932_062022-F.webp")
+photo_gift_p2 = URI.open("https://http2.mlstatic.com/D_NQ_NP_2X_914936-MLA48075978958_102021-F.webp")
 
 gift_p2.photo.attach(io: photo_gift_p2, filename: "#{Time.now.to_i}image.png.png", content_type: "image/png")
 gift_p2.list_id = varios_p.id
@@ -527,7 +526,7 @@ gift_d1 = Gift.new(
   status: "disponible"
 )
 
-photo_gift_d1 = URI.open("https://www.tematika.com/media/wysiwyg/Colecciones/2020/harry2020.jpg")
+photo_gift_d1 = URI.open("https://http2.mlstatic.com/D_NQ_NP_2X_808316-MLA45678119209_042021-F.webp")
 
 gift_d1.photo.attach(io: photo_gift_d1, filename: "#{Time.now.to_i}image.png.png", content_type: "image/png")
 gift_d1.list_id = libros_d.id
