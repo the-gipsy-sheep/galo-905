@@ -1,29 +1,136 @@
-<div class="container session-new-container ">
-  <div class="row">
-    <div class="d-flex justify-content-around align-items-center">
-      <div class="col-8">
-        <h2>Ingresar</h2>
+<div id="sign-form">
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <div class='form'>
+        <div class="form-sign-up">
+          <h1>Registrase</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>O Usar tu Cuenta</span>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-  <div class="form-inputs w-100">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" },
-                label: "Correo Electronico" %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" },
-                label: "Contraseña" %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+
+            <div class="input">
+              <%= f.input :email,
+              required: true,
+              autofocus: true,
+              input_html: { autocomplete: "email" },
+              label: "Correo Electronico"%>
+
+            </div>
+            <div class="input">
+              <%= f.input :password,
+              required: true,
+              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+              input_html: { autocomplete: "new-password" },
+              label: "Contraseña" %>
+
+            </div>
+            <div class="input">
+              <%= f.input :password_confirmation,
+              required: true,
+              input_html: { autocomplete: "new-password" },
+              label: "Repetir Contraseña" %>
+
+            </div>
+
+            <div class="input">
+              <%= f.input :user_name,
+              required: true,
+              autofocus: true,
+              input_html: { autocomplete: "user_name" },
+              label: "Nombre de Usuario"%>
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Registrarse", class:"btn btn-primary button" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="form-container sign-in-container">
+      <div class='form'>
+        <h1>Ingresar</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>O Usar tu Cuenta</span>
+
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <div class="input">
+            <%= f.input :email,
+            required: false,
+            autofocus: true,
+            input_html: { autocomplete: "email" },
+            label: "Correo Electronico" %>
+
+          </div>
+          <div class="input">
+
+
+            <%= f.input :password,
+            required: false,
+            input_html: { autocomplete: "current-password" },
+            label: "Contraseña" %>
+
+          </div>
+          <div class="input">
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Ingresar", class:"btn btn-primary button" %>
+          </div>
+        </div>
+
+        <% end %>
+
+      </div>
+    </div>
+
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Bienvenido a Galo!</h1>
+          <p>Para continuar conectado, inicia sesión</p>
+          <button class="ghost" id="signIn", class="btn btn-primary button">Ingresar</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Hola de Nuevo!</h1>
+          <p>Ingresa tus datos</p>
+          <button class="ghost" id="signUp", class="btn btn-primary button">Registrarse</button>
+        </div>
+      </div>
+
+    </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Ingresar", class: "btn-primary" %>
-  </div>
-<% end %>
+<script>let signUpButton = document.getElementById('signUp');
+let signInButton = document.getElementById('signIn');
+let container = document.getElementById('container');
 
-  <%= render "devise/shared/links" %>
-</div>
-</div>
-</div>
+signUpButton.addEventListener('click', () => {
+  container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+  container.classList.remove("right-panel-active");
+});</script>

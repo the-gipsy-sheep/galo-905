@@ -1,4 +1,5 @@
 require "open-uri"
+User.destroy_all
 
 puts "Creando usuarios..."
 
@@ -64,6 +65,7 @@ demian.save
 
 puts "4 usuarios creados correctamente"
 puts "Creando Listas..."
+
 
 varios = List.create(title: "me lo merezco", description: "un poco de todo", privacy: "pública", user_id: pao.id)
 gourmet = List.create(title: "gourmet", user_id: pao.id)
