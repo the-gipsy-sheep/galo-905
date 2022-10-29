@@ -1,4 +1,5 @@
 require "open-uri"
+User.destroy_all
 
 #  SEED DE USERS ----------------------------------------------------------------
 
@@ -100,6 +101,7 @@ favoritos_j = List.create(title: "favoritos",
                           user_id: juli.id)
 
 puts "#{List.all.size} listas creadas correctamente"
+
 puts "Creando regalos..."
 
 #  SEED DE GIFTS ----------------------------------------------------------------
