@@ -62,8 +62,8 @@ a {
 
 .button {
   border-radius: 20px;
-  border: 1px solid rgba(208, 143, 214, 0.946);
-  background-color: rgba(208, 143, 214, 0.946);
+  border: 1px solid $purple;
+  background-color: $purple;
   color: #FFFFFF;
   font-size: 12px;
   font-weight: bold;
@@ -87,7 +87,7 @@ button:focus {
 .ghost {
   background-color: transparent;
   border-color: #FFFFFF;
-  background: radial-gradient(circle, rgba(208, 143, 214, 0.946) 0%, rgba(91,91,91,0.9514180672268907) 95%);
+  background: radial-gradient(circle, rgba(208, 143, 214, 0.946) 0%, rgba(214, 205, 205, 0.951) 95%);
 }
 
 .form {
