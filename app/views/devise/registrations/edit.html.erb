@@ -32,8 +32,9 @@
               <% end %>
 
               <%= f.input :password, hint: "Dejar en blanco si no deseas cambiarlo", required: false, input_html: { autocomplete: "new-password" }, placeholder: "Nueva Contraseña", label: false %>
-              <%= f.input :password_confirmation, required: false, input_html: { autocomplete: "new-password" }, placeholder: "Contraseña Actual", label: false %>
-              <%= f.input :current_password, hint: "Necesitamos tu contrasena actual para confirmar los cambios", required: true, input_html: { autocomplete: "current-password" }, placeholder: "Repetir Contraseña", label: false %>
+              <%= f.input :password_confirmation, required: false, input_html: { autocomplete: "new-password" }, placeholder: "Repetir Contraseña", label: false %>
+              <br>
+              <%= f.input :current_password, hint: "Necesitamos tu contrasena actual para confirmar los cambios", required: true, input_html: { autocomplete: "current-password" }, placeholder: "Contraseña Actual", label: "Ingresá tu Contraseña para actualizar" %>
             </div>
             <div class="form-actions d-flex flex-column align-items-center justify-content-around">
               <%= f.button :submit, "Actualizar", class: "btn-primary text-uppercase" %>
