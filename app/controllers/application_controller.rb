@@ -19,13 +19,13 @@ class ApplicationController < ActionController::Base
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 
-  
+
 
   def configure_permitted_parameters
 
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :user_name, :phone_number, :address, :avatar_url])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :user_name])
 
 
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :user_name, :phone_number, :address, :avatar_url])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :user_name, :address, :birth_date])
   end
 end

@@ -8,8 +8,9 @@
   align-items: center;
   position: relative;
   border-radius: 10px;
-  height: 400px;
+  height: 420px;
   background-color: white;
+  transition: all 0.2s ease-in-out;
   a {
     text-decoration: none;
   }
@@ -40,6 +41,7 @@
 .card-gift h2 {
   font-size: 16px;
   font-weight: bold;
+  height: 40px;
   margin: 0;
   padding-left: 10px;
   text-transform: uppercase;
@@ -55,6 +57,7 @@
 .card-gift .gift-info {
   margin: 10px 0;
   padding-left: 10px;
+  height: 36px;
 }
 
 .gift-price {
@@ -68,4 +71,8 @@
   position: absolute;
   bottom: 15px;
   right: 15px;
+}
+.card-gift:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px $complementary;
 }

@@ -68,19 +68,6 @@ demian.save
 puts "#{User.all.size} usuarios creados correctamente"
 puts "Creando Listas..."
 
-<<<<<<< HEAD
-
-varios = List.create(title: "me lo merezco", description: "un poco de todo", privacy: "pública", user_id: pao.id)
-gourmet = List.create(title: "gourmet", user_id: pao.id)
-libros = List.create(title: "libros", privacy: "pública", user_id: demian.id)
-tecnologia = List.create(title: "tecno", user_id: demian.id)
-privada = List.create(title: "personal", description: "mis intereses privados", privacy: "privada", user_id: gonchi.id)
-general = List.create(title: "general", description: "todas las cosas que quiero que me regalen", user_id: gonchi.id)
-privada1 = List.create(title: "privada", privacy: "privada", user_id: juli.id)
-favoritos = List.create(title: "favoritos", user_id: juli.id)
-
-puts "8 listas creadas correctamente"
-=======
 #  SEED DE LISTS ----------------------------------------------------------------
 
 varios_p = List.create(title: "me lo merezco",
@@ -114,7 +101,7 @@ favoritos_j = List.create(title: "favoritos",
                           user_id: juli.id)
 
 puts "#{List.all.size} listas creadas correctamente"
->>>>>>> master
+
 puts "Creando regalos..."
 
 #  SEED DE GIFTS ----------------------------------------------------------------
