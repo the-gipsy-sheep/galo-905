@@ -10,6 +10,7 @@
   border-radius: 10px;
   height: 420px;
   background-color: white;
+  transition: all 0.2s ease-in-out;
   a {
     text-decoration: none;
   }
@@ -70,4 +71,8 @@
   position: absolute;
   bottom: 15px;
   right: 15px;
+}
+.card-gift:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px $complementary;
 }
