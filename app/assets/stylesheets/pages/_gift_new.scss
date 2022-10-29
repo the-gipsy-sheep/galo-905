@@ -11,4 +11,13 @@
   p {
     text-align: center;
   }
+  .input-group-addon {
+    width: 30px !important;
+    color: $primary;
+    font-size: 1.2em;
+    padding: 3px;
+    justify-content: center;
+    text-align: center;
+
+  }
 }
