@@ -1,72 +1,48 @@
-<div class="edit-user-container my-3">
+<div class="container my-3">
   <div class="row">
-    <div class="d-flex justify-content-around align-items-center">
-
-      <div class="col-8">
-        <h2>Actualizar </h2>
-
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <div class="edit-user-container my-3">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
-        <div class="form-inputs w-100">
-        <%= f.input :email, label: "Correo Electronico", required: true, autofocus: true %>
+        <div class="row">
+          <div class="col-6 px-5">
+            <div class="d-flex flex-column align-items-center" data-aos="fade-up" data-aos-duration="3000">
+                <% if @user.photo.attached? %>
+                  <%= cl_image_tag @user.photo.key %>
+                <% else %>
+                  <%= image_tag "random-gift.jpg", crop: :fill %>
+                <% end %>
+            </div>
+            <%= f.input :photos, label: "Cambiar Foto de Perfil", as: :file %>
+            <div class="info-name">
+              <%= f.input :user_name, required: true, autofocus: true, input_html: { autocomplete: "usuario" }, label: "Usuario" %>
+              <%= f.input :first_name, required: true, autofocus: true, input_html: { autocomplete: "nombre" }, label: "Nombre" %>
+              <%= f.input :last_name, required: true, autofocus: true, input_html: { autocomplete: "apellido" }, label: "Apellido" %>
+            </div>
+            <div class="info-detalle">
+              <%= f.input :address, required: true, autofocus: true, input_html: { autocomplete: "direccion" }, label: "Direccion" %>
+              <%= f.input :birth_date, required: true, autofocus: true, input_html: { autocomplete: "fecha de nacimiento" }, label: "Fecha de Nacimiento" %>
+            </div>
+          </div>
+          <div class="col-6 px-5">
+            <div class="login-info">
+              <%= f.input :email, label: "Correo Electronico", required: true, autofocus: true %>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p>Esperando confirmacion: <%= resource.unconfirmed_email %></p>
-        <% end %>
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <p>Esperando confirmacion: <%= resource.unconfirmed_email %></p>
+              <% end %>
 
-        <%= f.input :password,
-                    hint: "Dejar en blanco si no deseas cambiarlo",
-                    required: false,
-                    input_html: { autocomplete: "new-password" },
-                    label: "Contraseña" %>
-        <%= f.input :password_confirmation,
-                    required: false,
-                    input_html: { autocomplete: "new-password" },
-                    label: "Confirmar Contraseña" %>
-        <%= f.input :current_password,
-                    hint: "Necesitamos tu contrasena actual para confirmar los cambios",
-                    required: true,
-                    input_html: { autocomplete: "current-password" },
-                    label: "Repetir Contraseña" %>
-        <%= f.input :user_name,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "usuario" },
-                    label: "Usuario" %>
-        <%= f.input :first_name,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "nombre" },
-                    label: "Nombre" %>
-        <%= f.input :last_name,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "apellido" },
-                    label: "Apellido" %>
-        <%= f.input :address,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "direccion" },
-                    label: "Direccion" %>
-        <%= f.input :birth_date,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "fecha de nacimiento" },
-                    label: "Fecha de Nacimiento" %>
-        <%= f.input :photos, label: "Fotos", as: :file %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Actualizar", class: "btn-primary" %>
-      </div>
+              <%= f.input :password, hint: "Dejar en blanco si no deseas cambiarlo", required: false, input_html: { autocomplete: "new-password" }, placeholder: "Nueva Contraseña", label: false %>
+              <%= f.input :password_confirmation, required: false, input_html: { autocomplete: "new-password" }, placeholder: "Contraseña Actual", label: false %>
+              <%= f.input :current_password, hint: "Necesitamos tu contrasena actual para confirmar los cambios", required: true, input_html: { autocomplete: "current-password" }, placeholder: "Repetir Contraseña", label: false %>
+            </div>
+            <div class="form-actions d-flex flex-column align-items-center justify-content-around">
+              <%= f.button :submit, "Actualizar", class: "btn-primary text-uppercase" %>
+              <%= link_to "Cancelar Cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "" %>
+              <%= link_to "Volver", :back %>
+            </div>
+          </div>
+        </div>
       <% end %>
-
-
-        <div>No estas de acuerdo?</div>
-
-        <%= button_to "Cancelar Cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
-
-        <%= link_to "Volver", :back %>
     </div>
   </div>
 </div>
