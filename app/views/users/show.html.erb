@@ -2,7 +2,7 @@
 <div class="container d-flex">
   <div class="col-3">
     <figure class="snip1336">
-      <%= cl_image_tag @user.photo.key%>
+      <%= cl_image_tag @user.photo.key if @user.photo.attached? %>
       <figcaption>
         <h2><%= @user.first_name %> <%= @user.last_name %><span><%= @user.user_name %></span></h2>
         <p><i class="fa-solid fa-map-location-dot"></i> <%= @user.address %></p>
