@@ -25,17 +25,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <li class="nav-item active">
-          <%= link_to "Explorar Listas", lists_path(), class: "nav-link" %>
+          <%= link_to "Explorar Listas", lists_path(), class: "nav-link raise up" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Explorar regalos", gifts_path, class: "nav-link" %>
+          <%= link_to "Explorar regalos", gifts_path, class: "nav-link raise up" %>
         </li>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Nuevo Regalo", new_list_gift_path(List.find_by_user_id(current_user), @gift), class: "nav-link" %>
+            <%= link_to "Nuevo Regalo", new_list_gift_path(List.find_by_user_id(current_user), @gift), class: "nav-link raise up" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Mis Amigos", users_path, class: "nav-link" %>
+            <%= link_to "Mis Amigos", users_path, class: "nav-link raise up" %>
           </li>
           <li class="nav-item dropdown">
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -49,7 +49,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Ingresar/Registrarse", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Ingresar/Registrarse", new_user_session_path, class: "nav-link raise up" %>
           </li>
         <% end %>
       </ul>
