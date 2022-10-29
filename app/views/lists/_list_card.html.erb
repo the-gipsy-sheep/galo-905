@@ -2,19 +2,14 @@
 <div class="flip-card card-category list-card list-group-item d-flex justify-content-between align-items-center py-4 mb-3">
   <div class="flip-card-inner" tab-index="0">
     <div class="flip-card-front">
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+        <div class="carousel-inner flip-list-card">
               <%# <h2><%= list.title %></h2>
-          <% list.gifts.each do |gift| %>
-            <%# gift.gift_picture.each do |photo| %>
+          <% list.gifts.each_with_index do |gift, index| %>
               <% if gift.photo.attached? %>
-                <div class="carousel-item active ">
+                <div class="carousel-item <%= 'active' if index.zero? %>">
                   <%= cl_image_tag gift.photo&.key, height: 100, width: 100, crop: :fill %>
                 </div>
-              <%# else %>
-                <%# <div class="carousel-item"> %>
-                  <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-                <%# </div> %>
               <%end%>
             <%#end%>
           <%end%>

@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-around align-items-center">
       <div class="d-flex flex-column justify-content-around" data-aos="fade-up"
      data-aos-duration="3000">
-          <%= cl_image_tag @gift.photo.key %>
+          <%= cl_image_tag @gift.photo.key if @gift.photo.attached?%>
       </div>
       <div class="col-6">
         <h2>Edita tu Regalo</h2>
