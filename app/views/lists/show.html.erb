@@ -27,7 +27,7 @@
     <div class="container">
       <div class="cards my-4">
         <% @list.gifts.all.each do |gift| %>
-          <%= render 'gift_card', gift: gift %>
+          <%= render 'gifts/gift_card', gift: gift %>
         <% end %>
       </div>
     </div>

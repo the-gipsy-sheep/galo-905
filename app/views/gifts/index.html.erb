@@ -20,27 +20,14 @@
       </li>
   </ul>
   <div class="cards my-3">
-    <% if params[:query].present? %>
-      <% @elements.each do |element| %>
-        <% if element.searchable.respond_to?(:user_name) %>
-          <div class="card">
-            <%# <%= gift.searchable.user_name %>
-            <%= render "search_user", element: element %>
-          </div>
-        <% else %>
-          <%= render "search_gift", element: element %>
-        <% end %>
-      <% end %>
-    <% else %>
       <% if params[:user].present? %>
         <% @gifts.includes(:list).where('lists.user_id = ?', params[:user]).references(:lists).each do |gift| %>
-          <%= render "lists/gift_card", gift: gift %>
+          <%= render "gift_card", gift: gift %>
         <% end %>
       <% else %>
         <% @gifts.includes(:list).where('lists.privacy = ?', 'pública').references(:lists).each do |gift| %>
-          <%= render "lists/gift_card", gift: gift %>
+          <%= render "gift_card", gift: gift %>
         <% end %>
       <% end %>
-    <% end %>
   </div>
 </div>

@@ -10,7 +10,8 @@
   color: #ffffff;
   text-align: left;
   line-height: 1.4em;
-  background-color: #141414;
+  background-color: $primary;
+  border-radius: 10px;
   .follow-links {
     button {
       font-size: 0.8em;
@@ -51,6 +52,7 @@
 }
 .snip1336 img {
   max-width: 100%;
+  min-width: 315px;
   vertical-align: top;
   opacity: 0.85;
 }
@@ -103,10 +105,12 @@
   margin-right: 4%;
   border-color: #2980b9;
   color: #2980b9;
+  width: 100%;
 }
 .snip1336 h2 {
   margin: 0 0 5px;
   font-weight: 300;
+  font-size: 1.6vw;
 }
 .snip1336 h2 span {
   display: block;

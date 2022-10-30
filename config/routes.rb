@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :follows
   devise_for :users
+  resources :follows
 
   root to: "pages#home"
 
@@ -26,5 +26,7 @@ Rails.application.routes.draw do
   post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
   get '/users/:id/followers', to: "users#followers", as: "user_followers"
   get '/users/:id/followees', to: "users#followees", as: "user_followees"
+
+  get '/search', to: "pages#searches", as: "search"
 
 end

@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="cards my-3">
+    <% @elements.each do |element| %>
+      <% if element.searchable.respond_to?(:user_name) %>
+        <%= render "users/search_user", element: element %>
+      <% else %>
+        <%= render "gifts/search_gift", element: element %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
