@@ -31,9 +31,10 @@
       border: none !important;
       display: inline-block;
       padding: 0px;
-      font-family: Arial;
-      font-size: 0.7em;
-      text-transform: uppercase;
+      opacity: 1;
+      text-transform: capitalize;
+      font-size: 1em;
+      font-weight: normal;
       margin: 0px;
       display: inline !important;
     }
