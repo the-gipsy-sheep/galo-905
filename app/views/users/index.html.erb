@@ -3,14 +3,24 @@
     <div>
       <figure class="snip1336">
         <% if user.photo.attached? %>
-          <%= cl_image_tag user.photo.key%>
+          <%= cl_image_tag user.photo.key %>
         <% else %>
           <%= image_tag "random-gift.jpg", crop: :fill %>
         <% end %>
         <figcaption>
           <h2><%= user.first_name %> <%= user.last_name %><span><%= user.user_name %></span></h2>
+          <p><%= user.gifts.count %> Regalos <%= user.lists.count %> Listas <%= user.followers.count %> Seguidores <%= user.followees.count %> Seguidos</p>
           <p><i class="fa-solid fa-map-location-dot"></i> <%= user.address %></p>
           <p><i class="fa-solid fa-cake-candles"></i> <%= user.birth_date %></p>
+          <section class="follow-links">
+            <% if user.id == current_user.id %>
+              <%= button_to "Logout", '/logout', method: :post %>
+            <% elsif current_user.followees.include?(user) %>
+              <h5><%= button_to '<i class="fa-solid fa-user-xmark"></i>  Dejar de Seguir'.html_safe, unfollow_user_path(user), method: "POST" %></h5>
+            <% else %>
+              <h5><%= button_to '<i class="fa-solid fa-user-plus"></i>  Seguir'.html_safe, follow_user_path(user), method: "POST"  %></h5>
+            <% end%>
+          </section>
           <a href="<%= user_path(user)%>" class="follow">IR AL PERFIL</a>
           <a href="#" class="info">More Info</a>
         </figcaption>

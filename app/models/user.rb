@@ -9,6 +9,12 @@ class User < ApplicationRecord
   has_many :comments
   has_many :gifts, through: :lists
 
+  # followers relations
+  has_many :followed_users, foreign_key: :follower_id, class_name: 'Follow'
+  has_many :followees, through: :followed_users
+  has_many :following_users, foreign_key: :followee_id, class_name: 'Follow'
+  has_many :followers, through: :following_users
+
   validates :user_name, uniqueness: true, presence: true
   validates :user_name, length: { in: 6..30 }
 
