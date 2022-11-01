@@ -1,19 +1,31 @@
 .gift-edit-container {
-  background-color: white;
+  background: linear-gradient(to bottom right, $purple, $complementary);
+  margin-top: 60px;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  justify-content: space-between;
 
   img {
-    max-height: 600px;
-    min-height: 400px;
+    max-height:200px;
+    min-height: 200px;
+  }
+  input {
+    border-radius: 5px;
+  }
+  label {
+    font-weight: bold;
+    color: $primary;
   }
   h2 {
     text-transform: uppercase;
     text-align: center;
     color: grey;
     margin-top: 20px;
+
   }
-  p {
-    text-align: center;
-  }
+
   .btn {
     margin-top: 15px;
     width: 100%;
@@ -29,5 +41,19 @@
   }
   .btn:hover {
     opacity: 0.8;
+  }
+  .info-gral {
+    //display: flex;
+    //justify-content: space-between;
+    align-items: center;
+    div {
+      margin-left: 5px;
+    }
+  }
+  .foto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
   }
 }

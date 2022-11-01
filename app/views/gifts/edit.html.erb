@@ -1,23 +1,29 @@
-<div class="container gift-edit-container my-3">
+<div class="container my-3">
   <div class="row">
-    <div class="d-flex justify-content-around align-items-center">
-      <div class="d-flex flex-column justify-content-around" data-aos="fade-up"
-     data-aos-duration="3000">
-          <%= cl_image_tag @gift.photo.key %>
-      </div>
-      <div class="col-6">
-        <h2>Edita tu Regalo</h2>
-        <%= simple_form_for @gift, html: { class: "d-flex justify-content-between form-gift align-items-center flex-column "} do |f| %>
-          <%= f.input :url, label: "Ingresar la Dirección web", wrapper_html: { class: 'form-control form-gift-item' }%>
-          <%= f.input :title, label: "Titulo", wrapper_html: { class: 'form-control form-gift-item' } %>
-          <%= f.input :description, label: "Descripción", wrapper_html: { class: 'form-control form-gift-item' }  %>
-          <%= f.input :status, label: "Estado" %>
-          <%= f.input :photo, label: "Foto", as: :file %>
-          <%= f.input :ranking, label: "Puntuación" %>
-          <%= f.input :price, label: "Precio" %>
-          <%= f.button :submit, "Editar Regalo", class: "btn btn-primary my-3"  %>
-        <% end %>
-      </div>
+    <div class="gift-edit-container my-3">
+      <%= simple_form_for @gift do |f| %>
+        <div class="row">
+          <div class="col-6 px-5" >
+            <div class="foto d-flex flex-column align-items-center" data-aos="fade-up" data-aos-duration="3000">
+              <%= cl_image_tag @gift.photo.key %>
+            </div>
+
+            <div class="info-gral">
+              <%= f.input :url, required: true, autofocus: true, input_html: { autocomplete: "url" }, label: "Ingresar la Dirección web" %>
+              <%= f.input :title, required: true, autofocus: true, input_html: { autocomplete: "titulo" }, label: "Titulo" %>
+              <%= f.input :description, required: true, autofocus: true, input_html: { autocomplete: "descripcion" }, label: "Descripcion" %>
+              <%= f.input :status, required: true, autofocus: true, input_html: { autocomplete: "status" }, label: "Estado" %>
+              <%= f.input :photo, label: "Foto", as: :file %>
+              <%= f.input :ranking, required: true, autofocus: true, input_html: { autocomplete: "ranking" }, label: "Puntuacion" %>
+              <%= f.input :price, required: true, autofocus: true, input_html: { autocomplete: "precio" }, label: "Precio" %>
+            </div>
+            <div class="form-actions d-flex flex-column align-items-center justify-content-around">
+              <%= f.button :submit, "Editar Regalo", class: "btn-primary text-uppercase" %>
+              <%= link_to "Volver", :back %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
