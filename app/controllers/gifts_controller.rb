@@ -4,20 +4,12 @@ class GiftsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    if params[:query].present?
-      @elements = PgSearch.multisearch(params[:query])
-      # sql_query = <<~SQL
-      #   gifts.title @@ :query
-      #   OR gifts.description @@ :query
-      #   OR gifts.price @@ :query
-      # SQL
-      # @gifts = Gift.where(sql_query, query: "%#{params[:query]}%")
-    elsif params[:order].in? %w[price title created_at]
-      @gifts = policy_scope(Gift)
+    if params[:order].in? %w[price title created_at]
       @gifts = @gifts.order("gifts.#{params[:order]} #{params[:desc] ? 'DESC' : ''}")
     else
       @gifts = policy_scope(Gift)
     end
+    @gifts = policy_scope(Gift)
   end
 
   def new

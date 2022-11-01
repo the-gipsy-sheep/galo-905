@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def searches
+    @elements = PgSearch.multisearch(params[:query]) if params[:query].present?
+  end
 end
