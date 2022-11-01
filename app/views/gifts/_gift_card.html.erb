@@ -12,6 +12,9 @@
       <h2 class="">
         <%= link_to "#{gift.title}", gift_path(gift), data: { turbo_frame: "modal" }%>
       </h2>
+      <ul class="card_stars">
+        <%= '<li><i class="fa fa-star"></i></li>'.html_safe *  gift.ranking %>
+      </ul>
       <p class="gift-info text-capitalize">
       <% if gift.description?%>
         <% if gift.description.length > 40 %>
