@@ -15,7 +15,7 @@
           <% end %>
         <% else %>
           <% @lists.where(privacy: "pública").each do |list| %>
-            <%= render 'list_card', list: list %>
+            <%= render 'list_card', list: list if list.gifts.present? %>
           <% end %>
         <% end %>
       </ul>

@@ -1,26 +1,108 @@
-.footer {
-  background: $primary;
+// .footer {
+//   background: $primary;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   height: 100px;
+//   padding: 0px 50px;
+//   color: white;
+// }
+// .footer-links {
+//   display: flex;
+//   align-items: center;
+// }
+// .footer-links a {
+//   color: white;
+//   opacity: 0.5;
+//   text-decoration: none;
+//   font-size: 24px;
+//   padding: 0px 10px;
+// }
+// .footer-links a:hover {
+//   opacity: 1;
+// }
+// .footer .fa-heart {
+//   color: #D23333;
+// }
+.footer{
+  width: 100%;
+  padding: 50px 0px;
+  background-image: image_url("background-footer.svg");
+  background-size: cover;
+
+  // background-color: #42484a;
+  // -webkit-mask-image: image_url("background-footer.svg");
+  // mask-image: image_url("background-footer.svg");
+  // -webkit-mask-size: cover;
+  // mask-size: cover;
+}
+
+.container__footer{
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: white;
+  max-width: 100%;
+  margin: auto;
+  margin-top: 100px;
 }
-.footer-links {
+
+.box__footer{
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  padding: 40px;
 }
-.footer-links a {
-  color: white;
-  opacity: 0.5;
+
+.box__footer .logo img{
+  width: 180px;
+}
+
+.box__footer .terms{
+  max-width: 350px;
+  margin-top: 20px;
+  font-weight: 500;
+  color: #7a7a7a;
+  font-size: 18px;
+}
+
+.box__footer h2{
+  margin-bottom: 30px;
+  color: #343434;
+  font-weight: 700;
+}
+
+.box__footer a{
+  margin-top: 10px;
+  color: #7a7a7a;
+  font-weight: 600;
   text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
 }
-.footer-links a:hover {
-  opacity: 1;
+
+.box__footer a:hover{
+  opacity: 0.8;
 }
+
+.box__footer a .fab{
+  font-size: 20px;
+}
+
+.box__copyright{
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 0px 40px;
+}
+
+.box__copyright p{
+  margin-top: 20px;
+  color: #7a7a7a;
+}
+
+.box__copyright hr{
+  border: none;
+  height: 1px;
+  background-color: #7a7a7a;
+}
+
 .footer .fa-heart {
   color: #D23333;
 }
