@@ -4,12 +4,12 @@ class GiftsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    if params[:order].in? %w[price title created_at]
+    @gifts = policy_scope(Gift)
+    if params[:order].in? %w[price title created_at ranking]
       @gifts = @gifts.order("gifts.#{params[:order]} #{params[:desc] ? 'DESC' : ''}")
     else
       @gifts = policy_scope(Gift)
     end
-    @gifts = policy_scope(Gift)
   end
 
   def new

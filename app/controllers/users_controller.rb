@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     @lists = List.all
+    @gifts = @user.gifts
   end
 
   def follow

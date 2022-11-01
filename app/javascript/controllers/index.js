@@ -18,3 +18,6 @@ application.register("navbar", NavbarController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)
+
+import { initSortable } from "./plugins/init_sortable"
+initSortable()

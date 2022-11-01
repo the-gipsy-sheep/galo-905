@@ -27,10 +27,10 @@
             <p><%= @gift.description %></p>
           </div>
           <p>ESTADO: <%= @gift.status %> </p>
-          <div class="reviews">
-            <p>Deseometro</p>
+          <div class="reviews d-flex">
+            <p>Deseometro:   </p>
             <ul class="stars">
-              <%= '<li><i class="fa fa-star"></i></li>'.html_safe *  @gift.ranking %>
+              <%='<li><i class="fa fa-star"></i></li>'.html_safe *  @gift.ranking %>
             </ul>
           </div>
           <div class="user-edit">
