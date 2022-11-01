@@ -1,4 +1,4 @@
-import Sortable from "sortablejs"
+/* import Sortable from "sortablejs"
 
 const list = document.querySelector("#results")
 
@@ -7,3 +7,4 @@ const initSortable = () => {
 }
 
 export { initSortable }
+ */
