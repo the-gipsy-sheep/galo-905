@@ -11,4 +11,33 @@ class UsersController < ApplicationController
     authorize @user
     @lists = List.all
   end
+
+  def follow
+    @user = User.find(params[:id])
+    current_user.followees << @user
+    authorize @user
+    redirect_back(fallback_location: user_path(@user))
+  end
+
+  def unfollow
+    @user = User.find(params[:id])
+    current_user.followed_users.find_by(followee_id: @user.id).destroy
+    authorize @user
+    redirect_back(fallback_location: user_path(@user))
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers
+    render "index"
+    authorize current_user
+  end
+
+  def followees
+    @user = User.find(params[:id])
+    @users = @user.followees
+    render "index"
+    authorize current_user
+  end
+
 end

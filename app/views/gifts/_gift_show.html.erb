@@ -61,7 +61,7 @@
       <div class="card__footer">
         <div class="recommend">
           <p><%= @gift.list.title %></p>
-          <h3>by <%= @gift.list.user.user_name %></h3>
+          <h3>by <a href="<%= user_path(@gift.list.user)%>"><%= @gift.list.user.user_name %></a></h3>
         </div>
         <div class="action">
           <a href="<%= @gift.url %>" class="btn btn-primary" target="_blank"> Ir a la tienda </a>

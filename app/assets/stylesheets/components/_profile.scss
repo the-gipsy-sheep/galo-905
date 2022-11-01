@@ -11,6 +11,37 @@
   text-align: left;
   line-height: 1.4em;
   background-color: #141414;
+  .follow-links {
+    button {
+      font-size: 0.8em;
+      color: $primary;
+      border-radius: 5px;
+      background-color: $complementary;
+    }
+    button:hover {
+      font-weight: bold;
+      opacity: 0.9;
+    }
+
+
+  }
+  .metrics-links {
+    a {
+      text-decoration: none;
+      border: none !important;
+      display: inline-block;
+      padding: 0px;
+      opacity: 1;
+      text-transform: capitalize;
+      font-size: 1em;
+      font-weight: normal;
+      margin: 0px;
+      display: inline !important;
+    }
+    a:hover {
+      color: $secondary;
+    }
+  }
 }
 .snip1336 * {
   -webkit-box-sizing: border-box;
