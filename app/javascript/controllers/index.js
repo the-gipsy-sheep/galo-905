@@ -10,9 +10,6 @@ application.register("form-index", FormIndexController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import InvisibleHoverController from "./invisible_hover_controller"
-application.register("invisible-hover", InvisibleHoverController)
-
 import ModalController from "./modal_controller"
 application.register("modal", ModalController)
 
@@ -21,3 +18,6 @@ application.register("navbar", NavbarController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)
+
+// import { initSortable } from "./plugins/init_sortable"
+// initSortable()

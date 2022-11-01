@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :follows
 
   root to: "pages#home"
 
@@ -19,4 +20,13 @@ Rails.application.routes.draw do
 
   resources :comments, only: %i[update destroy]
   resources :users, only: %i[index show]
+
+  # Followers model
+  post '/users/:id/follow', to: "users#follow", as: "follow_user"
+  post '/users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
+  get '/users/:id/followers', to: "users#followers", as: "user_followers"
+  get '/users/:id/followees', to: "users#followees", as: "user_followees"
+
+  get '/search', to: "pages#searches", as: "search"
+
 end

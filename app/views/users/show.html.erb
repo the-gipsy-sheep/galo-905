@@ -1,24 +1,48 @@
 
 <div class="container d-flex">
-  <div class="col-3">
-    <figure class="snip1336">
-      <%= cl_image_tag @user.photo.key if @user.photo.attached? %>
-      <figcaption>
-        <h2><%= @user.first_name %> <%= @user.last_name %><span><%= @user.user_name %></span></h2>
-        <p><i class="fa-solid fa-map-location-dot"></i> <%= @user.address %></p>
-        <p><i class="fa-solid fa-cake-candles"></i> <%= @user.birth_date %></p>
-        <a href="<%= user_path(@user)%>" class="follow">IR AL PERFIL</a>
-        <a href="#" class="info">More Info</a>
-      </figcaption>
-    </figure>
+  <div class="col-3 ">
+    <div class="sticky-top" style="z-index: -1">
+      <figure class="snip1336">
+        <%= cl_image_tag @user.photo.key if @user.photo.attached? %>
+        <figcaption>
+          <h2><%= @user.first_name %> <%= @user.last_name %><span><%= @user.user_name %></span></h2>
+          <p class="metrics-links"><%= @user.gifts.count %> Regalos <%= @user.lists.count %> Listas <%= link_to "#{@user.followers.count} Seguidores", user_followers_path %> <%= link_to "#{@user.followees.count} Seguidos", user_followees_path %></p>
+          <p><i class="fa-solid fa-map-location-dot"></i> <%= @user.address %></p>
+          <p><i class="fa-solid fa-cake-candles"></i> <%= @user.birth_date %></p>
+          <section class="follow-links">
+            <% if @user.id == current_user.id %>
+                <%= button_to "Logout", '/logout', method: :post %>
+            <% elsif current_user.followees.include?(@user) %>
+                <h5><%= button_to "Unfollow", unfollow_user_path, method: "POST" %></h5>
+            <% else %>
+                <h5><%= button_to "Follow", follow_user_path, method: "POST"  %></h5>
+            <% end%>
+          </section>
+        </figcaption>
+      </figure>
+    </div>
   </div>
-  <div class="m-4 col-9">
-    <div>
-      <p>LISTAS</p>
-      <% @lists.where(user_id: current_user).each do |list| %>
-      <%# EN LA LINEA DE ARRIBA HAY QUE CAMBIAR PARA QUE SE VEAN LAS LISTAS DE CADA UNO. %>
-          <%= render 'lists/list_card', list: list %>
+  <div class="m-4 mb-0 col-9">
+    <%= render "shared/gift_order" %>
+    <div class="cards">
+      <% @gifts.each do |gift| %>
+        <%= render "gifts/gift_card", gift: gift %>
       <% end %>
     </div>
   </div>
 </div>
+<div class="container">
+  <p>LISTAS</p>
+  <div class="flip_cards_grid">
+    <% @lists.where(user_id: @user.id).each do |list| %>
+        <%= render 'lists/list_card', list: list %>
+    <% end %>
+  </div>
+</div>
+
+
+<style>
+  .sticky-top {
+    top: 80px;
+}
+</style>

@@ -11,7 +11,7 @@
     </button>
 
         <div class="search-input">
-          <%= form_with url: list_gifts_path(:list_id), method: :get, class: "d-flex" do %>
+          <%= form_with url: search_path, method: :get, class: "d-flex" do %>
             <%= text_field_tag :query,
               params[:query],
               class: "form-control",
@@ -35,7 +35,7 @@
             <%= link_to "Nuevo Regalo", new_list_gift_path(List.find_by_user_id(current_user), @gift), class: "nav-link raise up" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Mis Amigos", users_path, class: "nav-link raise up" %>
+            <%= link_to "Mis Amigos", user_followees_path(current_user), class: "nav-link raise up" %>
           </li>
           <li class="nav-item dropdown">
             <% if current_user.photo.attached? %>

@@ -5,4 +5,21 @@ class UserPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def follow?
+    true
+  end
+
+  def unfollow?
+    true
+  end
+
+  def followers?
+    true
+  end
+
+  def followees?
+    true
+  end
+
 end

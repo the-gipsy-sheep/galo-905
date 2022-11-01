@@ -1,13 +1,15 @@
-<div data-controller="form-index">
-  <div class="d-flex align-items-center justify-content-center my-4">
-    <%= link_to "Crear Lista Nueva", new_list_path, class: "btn btn-primary", data: {action: "click->form-index#showCreate"} if policy(List).new? %>
-  </div>
-  <div class="container">
-    <div class="row d-none" data-form-index-target="form">
+<div class="container">
+  <div class="row" data-controller="form-index">
+    <div class="d-flex align-items-center justify-content-center my-4">
+      <%= link_to "Crear Lista Nueva", new_list_path, class: "btn btn-primary", data: {action: "click->form-index#showCreate"} if policy(List).new? %>
+    </div>
+    <div class="d-none" data-form-index-target="form">
       <%= render 'list_new_form' %>
     </div>
-    <div class="row">
-      <ul class="list-group my-4">
+  </div>
+
+  <div>
+    <ul class="list-group my-4 flip_cards_grid">
         <%# Faltaria filtrar privacidad %>
         <% if params[:user].present? %>
           <% @lists.where(user_id: params[:user]).each do |list| %>
@@ -15,10 +17,9 @@
           <% end %>
         <% else %>
           <% @lists.where(privacy: "pública").each do |list| %>
-            <%= render 'list_card', list: list %>
+            <%= render 'list_card', list: list if list.gifts.present? %>
           <% end %>
         <% end %>
-      </ul>
-    </div>
+    </ul>
   </div>
 </div>

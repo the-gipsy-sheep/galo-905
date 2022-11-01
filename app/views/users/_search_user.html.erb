@@ -1,0 +1,21 @@
+
+<div class="container">
+  <figure class="snip1336">
+    <%= cl_image_tag element.searchable.photo.key if element.searchable.photo.attached? %>
+    <figcaption>
+      <h2><%= element.searchable.first_name %> <%= element.searchable.last_name %><span><%= element.searchable.user_name %></span></h2>
+      <p class="metrics-links"><%= element.searchable.gifts.count %> Regalos <%= element.searchable.lists.count %> Listas <%= link_to "#{element.searchable.followers.count} Seguidores", user_followers_path(element) %> <%= link_to "#{element.searchable.followees.count} Seguidos", user_followees_path(element) %></p>
+      <p><i class="fa-solid fa-map-location-dot"></i> <%= element.searchable.address %></p>
+      <p><i class="fa-solid fa-cake-candles"></i> <%= element.searchable.birth_date %></p>
+      <section class="follow-links">
+        <% if element.searchable.id == current_user.id %>
+            <%= button_to "Logout", '/logout', method: :post %>
+        <% elsif current_user.followees.include?(element.searchable) %>
+            <h5><%= button_to "Unfollow", unfollow_user_path(element), method: "POST" %></h5>
+        <% else %>
+            <h5><%= button_to "Follow", follow_user_path(element), method: "POST"  %></h5>
+        <% end%>
+      </section>
+    </figcaption>
+  </figure>
+</div>

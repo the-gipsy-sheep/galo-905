@@ -8,7 +8,7 @@
   align-items: center;
   position: relative;
   border-radius: 10px;
-  height: 420px;
+  height: 460px;
   background-color: white;
   transition: all 0.2s ease-in-out;
   a {
@@ -29,6 +29,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .card_stars{
+    display: inline-block;
+    list-style: none;
+    padding-left: 10px;
+
+    > li{
+      display: inline-block;
+
+      .fa{
+        color: #f7c01b;
+      }
+    }
   }
 }
 
@@ -73,6 +86,5 @@
   right: 15px;
 }
 .card-gift:hover {
-  color: rgba(255, 255, 255, 1);
   box-shadow: 0 5px 15px $complementary;
 }
