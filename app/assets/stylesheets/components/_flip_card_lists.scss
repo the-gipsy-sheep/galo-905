@@ -1,8 +1,8 @@
 .flip-card {
   display: inline-block;
     background-color: transparent;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 300px !important;
     margin-right: 12px;
     margin-bottom: 12px;
     border: 1px solid #f1f1f1;
@@ -63,7 +63,7 @@
   }
 
   .flip-list-card img {
-    width: 150px;
-    height: 100px;
+    width: 350px;
+    height: 230px;
     object-fit: contain;
   }
