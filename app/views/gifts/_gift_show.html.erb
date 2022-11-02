@@ -5,13 +5,12 @@
         <div class="icon">
           <a href="<% gifts_path %>"><i class="fa fa-arrow-left"></i></a>
         </div>
-        <h3>UN re-GALO</h3>
+        <%= image_tag "logos/galo_logo.png", style: "width: 50px; height: 50px; margin-left:50px;" %>
       </div>
       <div class="card__body">
         <div class="half">
           <div class="featured_text">
             <h1><%= @gift.title %></h1>
-            <p class="sub"><a href="<%= @gift.url %>" target="_blank" class="uppercase btn btn-primary"> <i class="fa-solid fa-cart-shopping"></i> Ir a la tienda </a></p>
             <p class="price">$ <%= @gift.price %></p>
           </div>
           <div class="image">
@@ -30,7 +29,7 @@
           <div class="reviews d-flex">
             <p>Deseometro:   </p>
             <ul class="stars">
-              <%='<li><i class="fa fa-star"></i></li>'.html_safe *  @gift.ranking %>
+              <%='<li><i class="fa-solid fa-heart"></i></li>'.html_safe *  @gift.ranking %><%='<li><i class="fa-regular fa-heart"></i></li>'.html_safe *  (5 - @gift.ranking) %>
             </ul>
           </div>
           <div class="user-edit">
@@ -64,7 +63,7 @@
           <h3>by <a href="<%= user_path(@gift.list.user)%>"><%= @gift.list.user.user_name %></a></h3>
         </div>
         <div class="action">
-          <a href="<%= @gift.url %>" class="btn btn-primary" target="_blank"> Ir a la tienda </a>
+          <a href="<%= @gift.url %>" class="btn btn-primary text-uppercase" target="_blank"><i class="fa-solid fa-cart-shopping"></i>  Ir a la tienda </a>
         </div>
       </div>
     </div>
