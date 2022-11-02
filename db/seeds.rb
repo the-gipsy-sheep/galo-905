@@ -1,4 +1,7 @@
 require "open-uri"
+Comment.destroy_all
+Gift.destroy_all
+List.destroy_all
 User.destroy_all
 
 #  SEED DE USERS ----------------------------------------------------------------
