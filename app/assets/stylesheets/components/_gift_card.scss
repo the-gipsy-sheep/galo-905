@@ -37,11 +37,10 @@
 
     > li{
       display: inline-block;
-
-      .fa{
-        color: #f7c01b;
-      }
     }
+  }
+  .fa-heart {
+    color: red;
   }
 }
 
