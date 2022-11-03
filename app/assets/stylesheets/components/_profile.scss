@@ -3,7 +3,6 @@
   font-family: 'Roboto', Arial, sans-serif;
   position: relative;
   overflow: hidden;
-  margin: 10px;
   min-width: 230px;
   max-width: 315px;
   width: 100%;
@@ -58,7 +57,7 @@
 }
 .snip1336 figcaption {
   width: 100%;
-  background-color: #141414;
+  background-color: $primary;
   padding: 10px;
   position: relative;
 }
@@ -71,7 +70,7 @@
   height: 0;
   border-style: solid;
   border-width: 55px 0 0 400px;
-  border-color: transparent transparent transparent #141414;
+  border-color: transparent transparent transparent $primary;
 }
 .snip1336 figcaption a {
   padding: 5px;
@@ -103,8 +102,9 @@
 }
 .snip1336 .follow {
   margin-right: 4%;
-  border-color: #2980b9;
-  color: #2980b9;
+  border-color: $complementary;
+  border-radius: 5px;
+  color: $complementary;
   width: 100%;
 }
 .snip1336 h2 {
@@ -115,11 +115,14 @@
 .snip1336 h2 span {
   display: block;
   font-size: 0.5em;
-  color: #2980b9;
+  color: $complementary;
 }
 .snip1336 p {
   margin: 0 0 10px;
   font-size: 0.8em;
   letter-spacing: 1px;
   opacity: 0.8;
+}
+.snip1336:hover {
+  box-shadow: 0 5px 15px $complementary;
 }
