@@ -27,7 +27,7 @@
     text-transform: uppercase;
     text-align: center;
     color: grey;
-    margin-top: 20px !important;
+    margin-top: 40px !important;
 
 
   }
@@ -64,5 +64,9 @@
     justify-content: space-between;
     align-items: center;
     margin-left: 5px;
+  }
+  #info-estado {
+    display: inline-flex;
+
   }
 }

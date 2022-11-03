@@ -9,15 +9,15 @@
             </div>
           </div>
             <div class= "col-6">
-            <h2>Edita tu Regalo</h2>
+            <h2 class="text-uppercase mb-4 text-center"><%= @gift.title%></h2>
               <div class="info-gral">
                 <%= f.input :url, label: "Ingresar la Dirección web", wrapper_html: { class: 'form-gift-item' }%>
                 <%= f.input :title, label: "Titulo", wrapper_html: { class: 'form-gift-item' } %>
                 <%= f.input :description, label: "Descripción", wrapper_html: { class: 'form-gift-item' }  %>
-                <%= f.input :status, label: "Estado", wrapper_html: { class: 'form-gift-item' } %>
+                
                 <%= f.input :photo, label: "Foto", as: :file %>
-                <%= f.input :ranking, required: true, autofocus: true, input_html: { autocomplete: "ranking" }, label: "Puntuacion" %>
-                <%= f.input :price, required: true, autofocus: true, input_html: { autocomplete: "precio" }, label: "Precio" %>
+                <%= f.input :ranking, label: "Puntuacion" %>
+                <%= f.input :price, label: "Precio $", wrapper_html: { class: 'form-gift-item' } %>
               </div>
 
             <div class="form-actions d-flex flex-column align-items-center justify-content-around">
