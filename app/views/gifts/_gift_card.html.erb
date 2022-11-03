@@ -13,7 +13,7 @@
         <%= link_to "#{gift.title}", gift_path(gift), data: { turbo_frame: "modal" }%>
       </h2>
       <ul class="card_stars">
-        <%= '<li><i class="fa fa-star"></i></li>'.html_safe *  gift.ranking %>
+        <%='<li><i class="fa-solid fa-heart red"></i></li>'.html_safe *  gift.ranking %><%='<li><i class="fa-regular fa-heart"></i></li>'.html_safe *  (5 - gift.ranking) %>
       </ul>
       <p class="gift-info text-capitalize">
       <% if gift.description?%>
