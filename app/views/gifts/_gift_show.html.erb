@@ -25,7 +25,14 @@
           <div class="description">
             <p><%= @gift.description %></p>
           </div>
-          <p>ESTADO: <%= @gift.status %> </p>
+          <p>ESTADO: <%= @gift.status == "disponible" ? "El regalo no ha sido reservado por nadie" : "El regalo fue reservado" %> </p>
+          <section class="reserve-links">
+            <% if @gift.status == "pendiente" %>
+                <h5><%= button_to "Cancelar Reserva", unreserve_gift_path, method: "POST", class:"btn btn-secondary btn-sm"  %></h5>
+            <% else %>
+                <h5><%= button_to "Reservar", reserve_gift_path, method: "POST", class:"btn btn-secondary btn-sm"  %></h5>
+            <% end %>
+          </section>
           <div class="reviews d-flex">
             <p>Deseometro:   </p>
             <ul class="stars">
