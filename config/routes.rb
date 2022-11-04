@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create]
   end
 
+  # reservar regalo
+  post '/gift/:id/reservar', to: "gifts#reserve", as: "reserve_gift"
+  post '/gift/:id/desreservar', to: "gifts#unreserve", as: "unreserve_gift"
+
   resources :comments, only: %i[update destroy]
   resources :users, only: %i[index show]
 
