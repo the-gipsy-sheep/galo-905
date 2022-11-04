@@ -7,3 +7,11 @@
 </div>
 
 <%= render "pages/homecards" %>
+<div class="container">
+  <h2>Algunos deseos de nuestros usuarios</h2>
+  <div class="cards my-4">
+    <% @gifts.sample(4).each do |gift| %>
+      <%= render "gifts/gift_card", gift: gift %>
+    <% end %>
+  </div>
+</div>
