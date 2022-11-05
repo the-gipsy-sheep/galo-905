@@ -1,7 +1,7 @@
 
 <div class="container d-flex">
   <div class="col-3 ">
-    <div class="sticky-top" style="z-index: -1">
+    <div class="sticky-top" style="z-index: 1">
       <figure class="snip1336">
         <%= cl_image_tag @user.photo.key if @user.photo.attached? %>
         <figcaption>
@@ -13,9 +13,9 @@
             <% if @user.id == current_user.id %>
                 <%= button_to "Logout", '/logout', method: :post %>
             <% elsif current_user.followees.include?(@user) %>
-                <h5><%= button_to "Unfollow", unfollow_user_path, method: "POST" %></h5>
+                <h5><%= button_to "Unfollow", unfollow_user_path(@user), method: "POST" %></h5>
             <% else %>
-                <h5><%= button_to "Follow", follow_user_path, method: "POST"  %></h5>
+                <h5><%= button_to "Follow", follow_user_path(@user), method: "POST"  %></h5>
             <% end%>
           </section>
         </figcaption>

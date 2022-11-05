@@ -11,11 +11,12 @@
         <% if element.searchable.id == current_user.id %>
             <%= button_to "Logout", '/logout', method: :post %>
         <% elsif current_user.followees.include?(element.searchable) %>
-            <h5><%= button_to "Unfollow", unfollow_user_path(element), method: "POST" %></h5>
+            <h5><%= button_to "Unfollow", unfollow_user_path(element.searchable), method: "POST" %></h5>
         <% else %>
-            <h5><%= button_to "Follow", follow_user_path(element), method: "POST"  %></h5>
+            <h5><%= button_to "Follow", follow_user_path(element.searchable), method: "POST"  %></h5>
         <% end%>
       </section>
+      <a href="<%= user_path(element.searchable)%>" class="follow">IR AL PERFIL</a>
     </figcaption>
   </figure>
 </div>
