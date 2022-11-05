@@ -12,7 +12,7 @@
                   <%= image_tag "random-gift.jpg", crop: :fill %>
                 <% end %>
             </div>
-            <%= f.input :photos, label: "Cambiar Foto de Perfil", as: :file %>
+            <%= f.input :photo, label: "Cambiar Foto de Perfil", as: :file %>
             <div class="info-name">
               <%= f.input :user_name, required: true, autofocus: true, input_html: { autocomplete: "usuario" }, label: "Usuario" %>
               <%= f.input :first_name, required: true, autofocus: true, input_html: { autocomplete: "nombre" }, label: "Nombre" %>

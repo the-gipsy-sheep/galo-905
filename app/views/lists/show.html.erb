@@ -3,7 +3,11 @@
     <div class="container">
       <div class="list-header text-uppercase justify-content-around d-flex align-items-center my-4">
         <div class="d-flex flex-column align-items-center">
-          <%= cl_image_tag @list.user.photo.key, class: "avatar dropdown-toggle align-items-center", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if @list.user.photo.attached? %>
+              <%= cl_image_tag @list.user.photo.key, class: "avatar dropdown-toggle align-items-center", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "random-user.png", class: "avatar dropdown-toggle align-items-center", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
           <p><%= @list.user.user_name %></p>
           <p class="text-center small"><i class="fa-solid fa-cake-candles"></i> <%= @list.user.birth_date %></p>
           <div class="dflex">

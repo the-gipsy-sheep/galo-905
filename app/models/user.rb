@@ -21,7 +21,7 @@ class User < ApplicationRecord
   include PgSearch::Model
   multisearchable against: %i[user_name first_name last_name]
 
-  after_save :create_default_list
+  after_create :create_default_list
 
   private
 
