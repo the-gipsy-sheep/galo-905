@@ -1,9 +1,15 @@
 .edit-user-container {
-  background: linear-gradient(to bottom right, $secondary, $complementary);
+  // background: linear-gradient(to bottom right, $secondary, $complementary);
   margin-top: 60px;
-  padding: 20px;
+  // padding: 20px;
   border-radius: 30px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+  .fondo{
+    background: linear-gradient(to bottom right, $secondary, $complementary);
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+  }
 
   input {
     border-radius: 5px;

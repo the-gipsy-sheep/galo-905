@@ -24,4 +24,12 @@ class GiftPolicy < ApplicationPolicy
   def destroy?
     record.list.user == user
   end
+
+  def reserve?
+    true
+  end
+
+  def unreserve?
+    true
+  end
 end

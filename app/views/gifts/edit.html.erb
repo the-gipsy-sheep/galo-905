@@ -1,24 +1,24 @@
 <div class="container my-3" >
   <div>
-    <div class="my-3">
+    <div class="my-3 gift-edit-container">
       <%= simple_form_for @gift do |f| %>
         <div class="row container-card" >
-          <div class="col-6 px-5 gift-edit-container" >
+          <div class="col-6 px-5 fondo" >
             <div class="foto d-flex flex-column align-items-center" data-aos="fade-up" data-aos-duration="3000">
-              <%= cl_image_tag @gift.photo.key %>
+              <%= cl_image_tag @gift.photo.key  %>
             </div>
           </div>
-            <div class= "col-6">
-            <h2>Edita tu Regalo</h2>
-              <div class="info-gral">
-                <%= f.input :url, label: "Ingresar la Dirección web", wrapper_html: { class: 'form-gift-item' }%>
-                <%= f.input :title, label: "Titulo", wrapper_html: { class: 'form-gift-item' } %>
-                <%= f.input :description, label: "Descripción", wrapper_html: { class: 'form-gift-item' }  %>
-                <%= f.input :status, label: "Estado", wrapper_html: { class: 'form-gift-item' } %>
-                <%= f.input :photo, label: "Foto", as: :file %>
-                <%= f.input :ranking, required: true, autofocus: true, input_html: { autocomplete: "ranking" }, label: "Puntuacion" %>
-                <%= f.input :price, required: true, autofocus: true, input_html: { autocomplete: "precio" }, label: "Precio" %>
-              </div>
+          <div class= "col-6">
+            <h2 class="text-uppercase mb-4 text-center pt-4"><%= @gift.title%></h2>
+            <div class="info-gral">
+              <%= f.input :url, label: "Ingresar la Dirección web", wrapper_html: { class: 'form-gift-item' }%>
+              <%= f.input :title, label: "Titulo", wrapper_html: { class: 'form-gift-item' } %>
+              <%= f.input :description, label: "Descripción", wrapper_html: { class: 'form-gift-item' }  %>
+
+              <%= f.input :photo, label: "Foto", as: :file %>
+              <%= f.input :ranking, label: "Puntuacion" %>
+              <%= f.input :price, label: "Precio $", wrapper_html: { class: 'form-gift-item' } %>
+            </div>
 
             <div class="form-actions d-flex flex-column align-items-center justify-content-around">
               <%= f.button :submit, "Editar Regalo", class: " btn btn-primary" %>

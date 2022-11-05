@@ -1,18 +1,18 @@
 <div class="container my-3">
-  <div class="row">
+  <%# <div class="row"> %>
     <div class="edit-user-container my-3">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
         <div class="row">
-          <div class="col-6 px-5">
-            <div class="d-flex flex-column align-items-center" data-aos="fade-up" data-aos-duration="3000">
+          <div class="col-6 px-5 fondo">
+            <div class="d-flex flex-column align-items-center pt-3">
                 <% if @user.photo.attached? %>
                   <%= cl_image_tag @user.photo.key %>
                 <% else %>
                   <%= image_tag "random-gift.jpg", crop: :fill %>
                 <% end %>
             </div>
-            <%= f.input :photos, label: "Cambiar Foto de Perfil", as: :file %>
+            <%= f.input :photo, label: "Cambiar Foto de Perfil", as: :file %>
             <div class="info-name">
               <%= f.input :user_name, required: true, autofocus: true, input_html: { autocomplete: "usuario" }, label: "Usuario" %>
               <%= f.input :first_name, required: true, autofocus: true, input_html: { autocomplete: "nombre" }, label: "Nombre" %>
@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="col-6 px-5">
-            <div class="login-info">
+            <div class="login-info pt-3">
               <%= f.input :email, label: "Correo Electronico", required: true, autofocus: true %>
 
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

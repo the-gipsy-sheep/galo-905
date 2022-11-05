@@ -1,4 +1,5 @@
 <div class="container">
+  <%= '<h2 class="text-center m-5 p-5">Todavia no tenes amigos, navega por las listas y regalos y segui a quien quieras</h2>'.html_safe if @users.empty? %>
   <div class="cards">
     <% @users.each do |user| %>
       <div>
