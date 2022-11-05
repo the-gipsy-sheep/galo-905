@@ -32,7 +32,7 @@
         </li>
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Nuevo Regalo", new_list_gift_path(List.find_by_user_id(current_user), @gift), class: "nav-link raise up" %>
+            <%= link_to "Agregar Regalo", new_list_gift_path(List.find_by_user_id(current_user), @gift), class: "nav-link raise up" %>
           </li>
           <li class="nav-item">
             <%= link_to "Mis Amigos", user_followees_path(current_user), class: "nav-link raise up" %>
