@@ -12,13 +12,15 @@
                   <%= image_tag "random-gift.jpg", crop: :fill %>
                 <% end %>
             </div>
-            <%= f.input :photo, label: "Cambiar Foto de Perfil", as: :file %>
-            <div class="info-name">
+            <div class="white-font">
+              <%= f.input :photo, label: "Cambiar Foto de Perfil", as: :file %>
+            </div>
+            <div class="info-name white-font">
               <%= f.input :user_name, required: true, autofocus: true, input_html: { autocomplete: "usuario" }, label: "Usuario" %>
               <%= f.input :first_name, required: true, autofocus: true, input_html: { autocomplete: "nombre" }, label: "Nombre" %>
               <%= f.input :last_name, required: true, autofocus: true, input_html: { autocomplete: "apellido" }, label: "Apellido" %>
             </div>
-            <div class="info-detalle">
+            <div class="info-detalle white-font">
               <%= f.input :address, required: true, autofocus: true, input_html: { autocomplete: "direccion" }, label: "Direccion" %>
               <%= f.input :birth_date, required: true, autofocus: true, input_html: { autocomplete: "fecha de nacimiento" }, label: "Fecha de Nacimiento" %>
             </div>
