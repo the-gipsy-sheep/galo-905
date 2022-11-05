@@ -18,7 +18,7 @@
     </div>
     <div class="flip-card-back">
       <%= link_to list_path(list) do %>
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="100">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-pause="false" data-bs-ride="carousel" data-bs-interval="100">
         <div class="carousel-inner flip-list-card">
           <% list.gifts.each_with_index do |gift, index| %>
             <% if gift.photo.attached? %>

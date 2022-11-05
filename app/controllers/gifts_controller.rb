@@ -51,6 +51,21 @@ class GiftsController < ApplicationController
     authorize @gift
   end
 
+  def reserve
+    @gift = Gift.find(params[:id])
+    @gift.status = "pendiente"
+    @gift.save
+    authorize @gift
+  end
+
+  def unreserve
+    @gift = Gift.find(params[:id])
+    @gift.status = "disponible"
+    @gift.save
+    authorize @gift
+  end
+
+
   private
 
   def set_gift

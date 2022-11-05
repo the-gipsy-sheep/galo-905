@@ -2,8 +2,16 @@
   <div class="m-5">
     <h1 class="gradient-text" data-aos-duration="3000"> GALO </h1>
     <p><span data-controller="typed-js"></span></p>
-    <%= link_to "Encontrá tu regalo perfecto", lists_path, class:"btn bubbly-button mt-5" %>
+    <%= link_to "Encontrá tu re-GALO perfecto", lists_path, class:"btn bubbly-button mt-5" %>
   </div>
 </div>
 
 <%= render "pages/homecards" %>
+<div class="container">
+  <h2>Algunos deseos de nuestros usuarios</h2>
+  <div class="cards my-4">
+    <% @gifts.sample(4).each do |gift| %>
+      <%= render "gifts/gift_card", gift: gift %>
+    <% end %>
+  </div>
+</div>
