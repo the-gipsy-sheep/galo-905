@@ -47,6 +47,10 @@
   text-align: center;
   .dropdown-item:hover {
     font-weight: bold;
+    color: black !important;
+  }
+  .dropdown-item {
+    color: $ghost-white !important;
   }
 }
 

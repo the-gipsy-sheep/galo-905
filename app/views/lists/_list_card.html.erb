@@ -21,11 +21,11 @@
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-pause="false" data-bs-ride="carousel" data-bs-interval="100">
         <div class="carousel-inner flip-list-card">
           <% list.gifts.each_with_index do |gift, index| %>
-              <% if gift.photo.attached? %>
-                <div class="carousel-item <%= 'active' if index.zero? %>">
-                  <%= cl_image_tag gift.photo&.key %>
-                </div>
-              <%end%>
+            <% if gift.photo.attached? %>
+              <div class="carousel-item <%= 'active' if index.zero? %>">
+                <%= cl_image_tag gift.photo&.key %>
+              </div>
+            <%end%>
           <%end%>
         </div>
       </div>
