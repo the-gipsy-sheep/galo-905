@@ -4,6 +4,7 @@
     <%= '<span class="new-gift-badge badge bg-success small">new</span>'.html_safe if gift.created_at >= (Date.today -7)  %>
       <div class="gift-img-container" >
         <% if gift.photo.key == nil%>
+          <%= image_tag "random-gift.jpg" %>
         <% else %>
           <%= cl_image_tag gift.photo.key %>
         <% end %>
