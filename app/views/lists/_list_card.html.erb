@@ -24,6 +24,10 @@
               <div class="carousel-item <%= 'active' if index.zero? %>">
                 <%= cl_image_tag gift.photo&.key %>
               </div>
+            <% else %>
+              <div class="carousel-item <%= 'active' if index.zero? %>">
+                <%= image_tag "random-gift.jpg" %>
+              </div>
             <%end%>
           <%end%>
         </div>
