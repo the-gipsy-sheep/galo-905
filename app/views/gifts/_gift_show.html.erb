@@ -47,15 +47,16 @@
             <% @gift.comments.each do |comment| %>
               <div class="card mt-2">
                 <div class="card-header">
-                  <%= comment.user.user_name %> dice:
+                  <%= comment.user.user_name %> comentó:
                 </div>
                 <div class="card-body">
                   <blockquote class="blockquote mb-0">
-                    <p><%= comment.content %></p>
-                    <footer class="blockquote-footer">Publicado el <cite title="Source Title"><%= comment.created_at %></cite></footer>
+                    <p class="text-sm"><%= comment.content %></p>
+                    <footer class="blockquote-footer">Publicado el <cite title="Source Title"><%= comment.created_at %></cite>
                     <% if comment.user == current_user %>
-                      <%= link_to '<i class="fa fa-trash"></i>'.html_safe, comment_path(comment.id), class:"btn btn-warning", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
+                      <%= link_to '<i class="fa fa-trash"></i>'.html_safe, comment_path(comment.id), class:"btn btn-danger btn-sm mx-3", data: {turbo_method: :delete, turbo_confirm: "Seguro?"} %>
                     <% end %>
+                    </footer>
                   </blockquote>
                 </div>
               </div>
