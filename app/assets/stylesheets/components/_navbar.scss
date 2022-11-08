@@ -8,6 +8,11 @@
     max-width: 600px;
     flex-grow: 2;
   }
+  .avatar {
+    height: 40px;
+    width: 40px;
+    object-fit: fill;
+  }
   .nav-link {
 
     color: $primary;

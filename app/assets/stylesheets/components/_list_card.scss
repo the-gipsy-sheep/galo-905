@@ -1,22 +1,29 @@
 .list-card {
   transition: all .2s ease-in-out;
-
   span {
     margin-bottom: 0px !important;
   }
   h2 {
-    text-transform: capitalize;
-    color: white;
+    text-transform: uppercase;
+    color: $ghost-white;
+    font-weight: bold;
+    text-shadow: 1px 0.5px #141414;
+    font-size: 1.5rem;
   }
 
   p {
-    color: white;
+    color: $ghost-white;
+    text-shadow: 1px 0.5px #141414;
+    font-weight:500;
+    text-shadow: 1px 0.5px #141414;
   }
 
   a {
     text-decoration: none;
     color:none;
     font-weight: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
@@ -37,10 +44,14 @@ li.list-card:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: $ghost-white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.list.card:hover {
+  box-shadow: 0 5px 15px $complementary;
 }

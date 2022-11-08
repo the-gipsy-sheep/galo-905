@@ -25,7 +25,8 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to lists_path
     else
-      render :new, status: :unprocessable_entity
+      @lists = policy_scope(List)
+      render :index, status: :unprocessable_entity
     end
     authorize @list
   end

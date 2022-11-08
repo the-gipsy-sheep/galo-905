@@ -1,8 +1,7 @@
 <div class="container my-3" >
-  <div>
     <div class="my-3 gift-edit-container">
       <%= simple_form_for @gift do |f| %>
-        <div class="row container-card" >
+        <div class="row" >
           <div class="col-6 px-5 fondo" >
             <div class="foto d-flex flex-column align-items-center" data-aos="fade-up" data-aos-duration="3000">
               <%= cl_image_tag @gift.photo.key  %>
@@ -10,7 +9,7 @@
           </div>
           <div class= "col-6">
             <h2 class="text-uppercase mb-4 text-center pt-4"><%= @gift.title%></h2>
-            <div class="info-gral">
+            <div class="info-gral m-3">
               <%= f.input :url, label: "Ingresar la Dirección web", wrapper_html: { class: 'form-gift-item' }%>
               <%= f.input :title, label: "Titulo", wrapper_html: { class: 'form-gift-item' } %>
               <%= f.input :description, label: "Descripción", wrapper_html: { class: 'form-gift-item' }  %>
@@ -28,5 +27,4 @@
         </div>
       <% end %>
     </div>
-  </div>
 </div>

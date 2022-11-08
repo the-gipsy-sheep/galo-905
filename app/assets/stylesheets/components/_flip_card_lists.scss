@@ -5,7 +5,6 @@
     height: 300px !important;
     margin-right: 12px;
     margin-bottom: 12px;
-    border: 1px solid #f1f1f1;
     perspective: 1000px;
   }
   .flip-card-inner {
@@ -30,7 +29,6 @@
     cursor: pointer;
   }
   .flip-card-inner:hover {
-    outline: 5px solid #0336c2;
     cursor: pointer;
   }
   .flip-card-front, .flip-card-back {
@@ -44,7 +42,7 @@
     backface-visibility: hidden;
   }
   .flip-card-front h2 {
-      color: white;
+      color: $primary;
       font-size: 16pt;
       font-weight: 500;
       padding: 10px;
@@ -52,7 +50,7 @@
   .flip-card-front p, .flip-card-back p {
     padding: 10px;
     font-size: 16pt;
-    color: white;
+    color: $primary;
   }
   .flip-card-front {
     background-color: rgba(151, 104, 161, 0.946) 0%, rgba(120,119,119,0.8785889355742297) 95%;
@@ -63,7 +61,12 @@
   }
 
   .flip-list-card img {
-    width: 350px;
-    height: 230px;
+    width: 180px;
+    height: 180px;
     object-fit: contain;
+    opacity: 1;
+  }
+  .flip-card-back {
+    background-color: $ghost-white 0.8;
+    border-radius: 20px;
   }
