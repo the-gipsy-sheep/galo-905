@@ -6,5 +6,8 @@
       placeholder: "Descripcion de la lista", wrapper_html: { class: 'form-item' } %>
       <%= f.input :privacy, label:false, collection: ['pública', 'privada'], include_blank: false, wrapper_html: { class: 'form-item' }  %>
       <%= f.button :submit, "+", class: "btn btn-primary" %>
+
+    <%= f.error_notification %>
+    <%= f.object.errors.full_messages.join(", ") if f.object.errors.any? %>
     <% end %>
   </div>
