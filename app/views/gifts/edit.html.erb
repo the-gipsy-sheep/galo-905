@@ -3,20 +3,26 @@
       <%= simple_form_for @gift do |f| %>
         <div class="row" >
           <div class="col-6 px-5 fondo" >
-            <div class="foto d-flex flex-column align-items-center" data-aos="fade-up" data-aos-duration="3000">
+            <div class="foto d-flex flex-column align-items-center pt-4" data-aos="fade-up" data-aos-duration="3000">
               <%= cl_image_tag @gift.photo.key  %>
             </div>
           </div>
-          <div class= "col-6">
+          <div class= "col-6 px-5">
             <h2 class="text-uppercase mb-4 text-center pt-4"><%= @gift.title%></h2>
-            <div class="info-gral m-3">
-              <%= f.input :url, label: "Ingresar la Dirección web", wrapper_html: { class: 'form-gift-item' }%>
-              <%= f.input :title, label: "Titulo", wrapper_html: { class: 'form-gift-item' } %>
-              <%= f.input :description, label: "Descripción", wrapper_html: { class: 'form-gift-item' }  %>
+            <div class=" pt-3">
+              <p><%= f.input :url, label: "Ingresar la Dirección web", wrapper_html: { class: "" }%></p>
+              <%= f.input :title, label: "Titulo", wrapper_html: { class: '' } %>
+              <%= f.input :description, label: "Descripción", wrapper_html: { class: '' }  %>
 
               <%= f.input :photo, label: "Foto", as: :file %>
-              <%= f.input :ranking, label: "Puntuacion" %>
-              <%= f.input :price, label: "Precio $", wrapper_html: { class: 'form-gift-item' } %>
+              <div class="row">
+                <div class="col-lg-6">
+                  <%= f.input :ranking, label: "Puntuacion" %>
+                </div>
+                <div class="col-lg-6">
+                  <%= f.input :price, label: "Precio $", wrapper_html: { class: '' } %>
+                </div>
+              </div>
             </div>
 
             <div class="form-actions d-flex flex-column align-items-center justify-content-around">
