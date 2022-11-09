@@ -33,7 +33,7 @@
 </div>
 <div class="container">
   <p>LISTAS</p>
-  <div class="flip_cards_grid">
+  <div class="flip-cards-grid">
     <% @lists.where(user_id: @user.id).each do |list| %>
         <%= render 'lists/list_card', list: list %>
     <% end %>

@@ -8,8 +8,8 @@
     </div>
   </div>
 
-  <div>
-    <ul class="list-group my-4 flip_cards_grid">
+  <div class="flip-cards-grid">
+    <div class="list-group my-4 flip-cards-grid">
         <%# Faltaria filtrar privacidad %>
         <% if params[:user].present? %>
           <% @lists.where(user_id: params[:user]).each do |list| %>
@@ -20,6 +20,6 @@
             <%= render 'list_card', list: list if list.gifts.present? %>
           <% end %>
         <% end %>
-    </ul>
+    </div>
   </div>
 </div>
