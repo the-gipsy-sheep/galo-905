@@ -1,6 +1,14 @@
-.flip_cards_grid {
+.flip-cards-grid {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 8px
+  gap: 8px;
+}
 
+@media (min-width: 600px) {
+  .flip-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .flip-cards-grid { grid-template-columns: repeat(3, 1fr); }
 }

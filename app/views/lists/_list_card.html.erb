@@ -1,4 +1,4 @@
-<div  class="flip-card card-category list-card py-4 mb-3 col-4 d-flex flex-column" style="background-image: url(<%= asset_path "backgrounds/list_background.png" %>)">
+<div  class="flip-card card-category list-card py-4 mb-3 d-flex flex-column" style="background-image: url(<%= asset_path "backgrounds/list_background.png" %>)">
   <%= '<span class="new-badge badge bg-success small">new</span>'.html_safe if list.created_at >= (Date.today -7)  %>
   <div class="flip-card-inner" tab-index="0">
     <div class="flip-card-front">
