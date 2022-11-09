@@ -1,15 +1,21 @@
 .container-forn-new-gift {
   // background: linear-gradient(to bottom right, $purple, $complementary);
   margin-top: 60px;
+  margin-bottom: 60px;
   // padding: 20px;
   border-radius: 30px;
-  box-shadow: 2px 2px 16asipx rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.3);
 }
 
 .fondo{
   background: linear-gradient(to bottom right, $secondary, $complementary);
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: center;
 }
 
 .gift-new-container {
@@ -19,6 +25,7 @@
     min-height: 400px;
   }
   h2 {
+    padding-top: 25px;
     text-transform: uppercase;
     text-align: center;
   }
