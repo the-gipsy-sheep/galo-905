@@ -1,15 +1,31 @@
-.gift-new-container {
-  background: linear-gradient(to bottom right, $purple, $complementary);
+.container-forn-new-gift {
+  // background: linear-gradient(to bottom right, $purple, $complementary);
   margin-top: 60px;
-  padding: 20px;
+  margin-bottom: 60px;
+  // padding: 20px;
   border-radius: 30px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+.fondo{
+  background: linear-gradient(to bottom right, $secondary, $complementary);
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+}
+
+.gift-new-container {
+
   img {
     max-height: 600px;
     min-height: 400px;
   }
   h2 {
+    padding-top: 25px;
     text-transform: uppercase;
     text-align: center;
   }
@@ -25,4 +41,34 @@
     text-align: center;
 
   }
+
+  .btn {
+    margin-top: 15px;
+    height: 45px;
+    border-radius: 8px;
+    border: 2px;
+    //background-color: $primary;
+    color: #FFFFFF;
+    font-size: 20px;
+    //font-weight: bold;
+    //padding: 12px 45px;
+    //letter-spacing: 1px;
+    //text-transform: uppercase;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s ease;
+    //transition: transform 80ms ease-in;
+  }
+  .btn {
+    font-weight: bolder;
+  }
+
+  .btn:hover {
+    opacity: 0.8;
+  }
+
+  .rotate-scale-up {
+    -webkit-animation: rotate-scale-up 0.65s linear both;
+    animation: rotate-scale-up 0.65s linear both;
+}
+
 }
