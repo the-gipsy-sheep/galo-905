@@ -1,10 +1,75 @@
+.container-card {
+  border-radius: 30px;
+  margin-top: 60px;
+  //box-shadow:  0 14px 28px rgba(0,0,0,0.25),
+  // 0 10px 10px rgba(0,0,0,0.22);
+  //box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
 .list-edit-container {
-  background-color: white;
+  border-radius: 30px;
+  box-shadow: 3px 10px 30px rgba(0, 0, 0, 0.2);
+  //background-color: white;
+  justify-content: space-between;
+
   img {
-    max-height: 600px;
+    max-height: 300px;
+    object-fit: fill;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  input {
+    border-radius: 5px;
+  }
+  label {
+    font-weight: bold;
+    color: $primary;
   }
   h2 {
     text-transform: uppercase;
     text-align: center;
+    color: grey;
+    margin-top: 40px !important;
+  }
+  .fondo {
+    background: linear-gradient(to bottom right, $secondary, $complementary);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  .btn {
+    margin-top: 15px;
+    height: 45px;
+    border-radius: 8px;
+    border: 2px solid $secondary;
+    //background-color: $primary;
+    color: #FFFFFF;
+    font-size: 20px;
+    //font-weight: bold;
+    //padding: 12px 45px;
+    //letter-spacing: 1px;
+    //text-transform: uppercase;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s ease;
+    //transition: transform 80ms ease-in;
+  }
+  .btn {
+    font-weight: bolder;
+  }
+
+  .btn:hover {
+    opacity: 0.8;
+  }
+  .info-gral {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      margin-left: 5px;
+    }
+  }
+  .foto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5px;
   }
 }

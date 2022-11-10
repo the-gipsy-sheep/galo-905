@@ -1,18 +1,26 @@
-<div class="container list-edit-container my-3">
-  <div class="row">
-    <div class="d-flex justify-content-around align-items-center">
-      <div class="d-flex flex-column justify-content-around">
-        <%= image_tag "backgrounds/edit-list.jpg" %>
-      </div>
-      <div class="col-6">
-        <h2>Edita tu Lista</h2>
-        <%= simple_form_for @list, html: { class: "d-flex justify-content-between form-gift align-items-center flex-column"} do |f| %>
-          <%= f.input :title, label: "Titulo", wrapper_html: { class: 'form-control form-gift-item' } %>
-          <%= f.input :description, label: "Descripcion", wrapper_html: { class: 'form-control form-gift-item' }  %>
-          <%= f.input :privacy, collection: ["pública", "privada" ], wrapper_html: { class: 'form-control form-gift-item' }  %>
-          <%= f.button :submit, "Editar Lista", class: "btn btn-primary my-3"  %>
-        <% end %>
-      </div>
+<div class="container my-3 ">
+  <div class="my-3 list-edit-container">
+
+      <%= simple_form_for @list do |f| %>
+      <div class="row ">
+        <div class="col-6 px-5 fondo" >
+          <div class="foto d-flex flex-column align-items-center pt-5">
+            <%= image_tag "backgrounds/edit-list2.jpg" %>
+          </div>
+        </div>
+        <div class="col-6 px-5 ">
+          <h2 class="text-uppercase mb-4 text-center pt-4">Edita tu Lista</h2>
+          <div class=" pt-3">
+            <%= f.input :title, label: "Titulo", wrapper_html: { class: '' } %>
+            <%= f.input :description, label: "Descripcion", wrapper_html: { class: '' }  %>
+            <%= f.input :privacy, collection: ["pública", "privada" ], wrapper_html: { class: '' }  %>
+            </div>
+            <div class="form-actions d-flex flex-column align-items-center justify-content-around">
+              <%= f.button :submit, "Editar Lista", class: "btn btn-primary my-3"  %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
