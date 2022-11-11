@@ -34,12 +34,14 @@
     background: linear-gradient(to bottom right, $secondary, $complementary);
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
   }
   .btn {
     margin-top: 15px;
     height: 45px;
     border-radius: 8px;
-    border: 2px solid $secondary;
+    border: 2px;
     //background-color: $primary;
     color: #FFFFFF;
     font-size: 20px;

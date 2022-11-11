@@ -7,26 +7,35 @@
     color: white;
     font-size: 0.7em;
     font-weight: 500;
-    i{
+    i {
       color: #25D366;
       font-size: 1em;
     }
   }
 
-.top-section {
-  padding-top: 20px;
-  clip-path: polygon(0 0,100% 0,100% calc(100% - 50px),50% 100%,0 calc(100% - 50px));
-  background-color: $complementary;
-  background: linear-gradient(to bottom, white, $complementary );
+  .small {
+    font-size: 0.7em !important;
+  }
 
-  height: 300px;
-}
-.bottom-section {
-  padding: 40px 0;
-  clip-path: polygon(0 0,50% 50px,100% 0,100% 100%,0 100%);
-  margin-top: -45px;
-  background: linear-gradient(to bottom, $complementary, $blue);
-}
+  p{
+    a {
+      color: white;
+    }
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .user-div {
+    width: 300px;
+  }
+
+  .whatsapp-share:hover {
+    background-color: white;
+    color: #25D366;
+  }
 
   .list-header {
     overflow: hidden;
@@ -38,8 +47,9 @@
     padding: 20px;
     border-radius: 10px;
     z-index: 1000;
-    opacity: 0.95;
+    opacity: 0.9;
     font-size: 1.3rem;
+    text-shadow: 1px 0.5px #141414;
     h1 {
       font-size: 1.8rem;
     }

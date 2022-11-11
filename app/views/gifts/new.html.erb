@@ -1,12 +1,13 @@
-<div class="container gift-new-container">
+<div class="container container-form-new-gift">
   <div class="row">
-    <div class="d-flex justify-content-around align-items-center">
-      <div class="d-flex flex-column justify-content-around">
-        <%= image_tag "backgrounds/200.gif" %>
+    <div class="col-6 d-flex align-items-center flex-column justify-content-around">
+      <div class="flexbox rotate-scale-up">
+        <%= image_tag "logos/galo_logo.png" %>
       </div>
-      <div class="">
-        <h2>Sumá un regalo</h2>
-        <p>a la lista</p>
+    </div>
+    <div class="col-6 fondo">
+      <div class="gift-new-container">
+        <h2>Agregá un regalo</h2>
         <%= render 'gift_new_form' %>
       </div>
     </div>
