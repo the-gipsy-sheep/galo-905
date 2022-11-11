@@ -3,9 +3,10 @@
     <div class="">
     <%= '<span class="new-gift-badge badge bg-success small">new</span>'.html_safe if element.searchable.created_at >= (Date.today -7)  %>
       <div class="gift-img-container" >
-        <% if element.searchable.photo.key == nil%>
+        <% if gift.photo.key == nil%>
+          <%= image_tag "random-gift.jpg" %>
         <% else %>
-          <%= cl_image_tag element.searchable.photo.key %>
+          <%= cl_image_tag gift.photo.key %>
         <% end %>
       </div>
       <p class=" gift-price">$ <%= number_with_precision(element.searchable.price, :precision => 0, :delimiter => ',') %></p>

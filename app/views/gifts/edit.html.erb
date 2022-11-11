@@ -2,7 +2,7 @@
     <div class="my-3 gift-edit-container">
       <%= simple_form_for @gift do |f| %>
         <div class="row" >
-          <div class="col-6 px-5 fondo" >
+          <div class="col-6 d-flex align-items-center flex-column justify-content-around px-5 fondo" >
             <div class="foto d-flex flex-column align-items-center pt-4" data-aos="fade-up" data-aos-duration="3000">
               <%= cl_image_tag @gift.photo.key  %>
             </div>
