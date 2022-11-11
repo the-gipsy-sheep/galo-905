@@ -46,6 +46,7 @@
 .flexbox {
   display: flex;
   justify-content: center;
+  // align-content: center;
 }
 
 .gift-new-container {
@@ -56,7 +57,7 @@
     text-align: center;
   }
   h2 {
-    padding-top: 25px;
+    padding-top: 55px;
     text-transform: uppercase;
     text-align: center;
   }
