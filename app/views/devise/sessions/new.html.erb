@@ -11,7 +11,8 @@
           </div>
           <span>O Usar tu Cuenta</span>
 
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }
+            ) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
@@ -43,6 +44,7 @@
             <div class="input">
               <%= f.input :user_name,
               required: true,
+              hint: "Usuario minimo 6 caracteres",
               autofocus: true,
               input_html: { autocomplete: "user_name" },
               label: "Nombre de Usuario"%>
@@ -71,7 +73,8 @@
         <span>O Usar tu Cuenta</span>
 
 
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }
+) do |f| %>
         <div class="form-inputs">
           <div class="input">
             <%= f.input :email,
