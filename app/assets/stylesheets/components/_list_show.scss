@@ -7,13 +7,35 @@
     color: white;
     font-size: 0.7em;
     font-weight: 500;
-    i{
+    i {
       color: #25D366;
       font-size: 1em;
     }
   }
 
+  .small {
+    font-size: 0.7em !important;
+  }
 
+  p{
+    a {
+      color: white;
+    }
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .user-div {
+    width: 300px;
+  }
+
+  .whatsapp-share:hover {
+    background-color: white;
+    color: #25D366;
+  }
 
   .list-header {
     overflow: hidden;
@@ -25,8 +47,9 @@
     padding: 20px;
     border-radius: 10px;
     z-index: 1000;
-    opacity: 0.95;
+    opacity: 0.9;
     font-size: 1.3rem;
+    text-shadow: 1px 0.5px #141414;
     h1 {
       font-size: 1.8rem;
     }
