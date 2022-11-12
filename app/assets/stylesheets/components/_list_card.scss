@@ -11,6 +11,17 @@
     font-size: 1.5rem;
   }
 
+
+    background-color: transparent;
+    border-color: $magenta;
+    //background: linear-gradient( rgba(151, 104, 161, 0.946) 0%, rgba(120,119,119,0.8785889355742297) 95%);
+    //background: linear-gradient( rgba(208, 143, 214, 0.946) 0%, rgba(91,91,91,0.9514180672268907) 95%);
+    //background: radial-gradient(circle, rgba(245, 93, 174, 0.946) 0%, rgba(174, 53, 117, 0.581) 95%);
+    background: rgb(113,69,214);
+    background: linear-gradient(135deg, rgba(113,69,214,0.6) 0%, rgba(245,93,174,0.5) 45%, rgba(68,48,122,0.7) 100%);
+    //box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+        //0 10px 10px rgba(0,0,0,0.22);
+
   p {
     color: $ghost-white;
     text-shadow: 1px 0.5px #141414;
