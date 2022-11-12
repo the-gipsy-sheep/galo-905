@@ -1,12 +1,15 @@
 <div class="container">
-  <%= '<h2 class="text-center m-5 p-5">No hay resultados que coincidan con tu busqueda</h2>'.html_safe if @elements.empty? %>
-  <div class="cards my-3">
-    <% @elements.each do |element| %>
-      <% if element.searchable.respond_to?(:user_name) %>
-        <%= render "users/search_user", element: element %>
-      <% else %>
-        <%= render "gifts/search_gift", element: element %>
+  <% if @elements == nil %>
+    <%= '<h2 class="text-center m-5 p-5">No hay resultados que coincidan con tu busqueda</h2>'.html_safe  %>
+  <% else %>
+    <div class="cards my-3">
+      <% @elements.each do |element| %>
+        <% if element.searchable.respond_to?(:user_name) %>
+          <%= render "users/search_user", element: element %>
+        <% else %>
+          <%= render "gifts/search_gift", element: element %>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
